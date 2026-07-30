@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-6</title>
+</head>
+<body>
+    <h1>TABLES IN HTML</h1>
+    <h2>1.NORMAL TABLE</h2>
+    <table>
+        <tr>
+            <td>1</td>
+            <td>RAVI</td>
+            <td>10th</td>
+            <td>A</td>
+            <td>BANGLORE</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>RAJESH</td>
+            <td>10th</td>
+            <td>A</td>
+            <td>BANGLORE</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>RAJ</td>
+            <td>10th</td>
+            <td>B</td>
+            <td>BANGLORE</td>
+        </tr>
+    </table>
+    <h2>2.FULL TABLE STRUCTURE</h2>
+    <table>
+    <thead>
+        <tr>
+            <th>Roll No</th>
+            <th>Name</th>
+            <th>Class</th>
+            <th>Div</th>
+            <th>City</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>1</td>
+            <td>RAVI</td>
+            <td>10th</td>
+            <td>A</td>
+            <td>BANGLORE</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>RAJESH</td>
+            <td>10th</td>
+            <td>A</td>
+            <td>BANGLORE</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>RAJ</td>
+            <td>10th</td>
+            <td>B</td>
+            <td>BANGLORE</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td>Class Teacher</td>
+            <td>Miss.M.K.Gupta</td>
+        </tr>
+    </tfoot>
+    </table>
+    <h2>3.TABLE WITH CAPTION</h2>
+    <table>
+        <caption>Student Information</caption>
+        <tr>
+            <th>Roll No.</th>
+            <th>Name</th>
+            <th>Age</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Alex</td>
+            <td>20</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>Ben</td>
+            <td>22</td>
+        </tr>
+    </table>
+    <h2>4.TABLE WITH COLGROUP AND COL SPAN</h2>
+    <table>
+        <colgroup>
+            <col span="1" width="300"
+            style="background-color: green" /> <!--Span : Means How many columns i need to apply the background color-->
+            <col span="1" 
+            style="background-color: red" />
+            <col span="1" 
+            style="background-color: none" />
+        </colgroup>
+        <tr>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>BRANCH</th>
+        </tr>
+        <tr>
+            <td>Ben</td>
+            <td>22</td>
+            <td>CSE</td>
+        </tr>
+        <tr>
+            <td>Rayen</td>
+            <td>21</td>
+            <td>ECE</td>
+        </tr>
+    </table>
+    <h2>5.TABLE WITH ROWSPAN AND COLSPAN</h2>
+    <table>
+        <tr>
+            <th>Class</th>
+            <th>Name</th>
+            <th>01/07/2026</th>
+            <th>02/07/2026</th>
+            <th>03/07/2026</th>
+            <th>04/07/2026</th>
+        </tr>
+        <tr>
+            <td rowspan="4">VII</td>
+            <td>Aftab</td>
+            <td colspan="4">Present</td>
+        </tr>
+        <tr>
+            <td>Rahul</td>
+            <td colspan="4">Present</td>
+        </tr>
+        <tr>
+            <td>Reena</td>
+            <td colspan="4">Present</td>
+        </tr>
+        <tr>
+            <td>Sam</td>
+            <td colspan="4">Present</td>
+        </tr>
+    </table>
+    <h2>6.TABLE FORMATTING</h2>
+    <table align="center", border="2", cellpadding="10", cellspacing="5",radius="10", style="background-color:aquamarine; border-radius:10px; border-color:rgb(255, 0, 0);text-align: center;">
+        <colgroup>
+            <col span="1" width="100"
+            style="background-color: rgb(51, 242, 51)" /> <!--Span : Means How many columns i need to apply the background color-->
+            <col span="1" 
+            style="background-color: rgb(255, 241, 83)" />
+            <col span="4" 
+            style="background-color: rgba(61, 61, 255, 0.944)" />
+        </colgroup>
+        <tr>
+            <th>Class</th>
+            <th>Name</th>
+            <th>01/07/2026</th>
+            <th>02/07/2026</th>
+            <th>03/07/2026</th>
+            <th>04/07/2026</th>
+        </tr>
+        <tr>
+            <td rowspan="4">VII</td>
+            <td>Aftab</td>
+            <td colspan="4">Present</td>
+        </tr>
+        <tr>
+            <td>Rahul</td>
+            <td colspan="2">Present</td>
+            <td colspan="2">Absent</td>
+        </tr>
+        <tr>
+            <td>Reena</td>
+            <td colspan="4">Present</td>
+        </tr>
+        <tr>
+            <td>Sam</td>
+            <td colspan="4">Present</td>
+        </tr>
+    </table>
+</body>
+</html>
