@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-7</title>
+</head>
+<body>
+    <h2>HTML FORMS</h2>
+    <form>
+        <h3>NORMAL HTML FORM</h3>
+        <h4>INPUT TAG</h4>
+        FName : <input type="text"><br><br>
+        LName : <input type="text"><br><br>
+        Email-ID : <input type="email"><br><br>
+        Contact Number : <input type="number"><br><br>
+        Enter the Password : <input type="password"><br><br>
+        Date of Birth : <input type="date"><br><br>
+        Gender : Male <input type="radio" name="gender" value="male"> Female <input type="radio" name="gender" value="female"><br><br>
+        CGPA : <input type="range"><br><br>
+        Agree Terms & Conditions : <input type="check" box checked><br><br>
+        Resume : <input type="file"><br><br>
+        Photo : <input type="image"><br><br>
+        Address : <textarea name="address" cols="30" rows="5"></textarea><br><br>
+        <input type="submit" name="action" value="Submit"/>
+        <input type="button" name="action" value="Edit"/>
+        <input type="button" name="action" value="Delete"/>
+    </form>
+    <!--id :  connects the box to an HTML <label> for accessibility and JavaScript styling-->
+    <!--name : is the data key sent to your backend server database when submitted-->
+    <!--value :  is the actual text data locked inside the box right now.-->
+    <!--NOTE : Either we can use Placeholder or Value (Not both)-->
+    <form action="/submit-data" method="POST">
+        <h4>NORMAL HTML FORM WITH ATTRIBUTES & LABEL</h4>
+        <label for="name">Name :</label>
+        <input type="text" id="name" name="name" placeholder="Enter Your Name" required><br><br>
+        <label for="password">Password :</label>
+        <input type="password" id="password" name="password" placeholder="Enter Your Password" minlength="8" maxlength="12" required><br><br>
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="userAge" min="18" max="99" value="18" placeholder="Enter Your Age" required><br><br>
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="userEmail" placeholder="Enter Your Email" required><br><br>
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" name="userDob" required><br><br>
+        <label for="gender">Gender:</label>
+        <input type="radio" id="male" name="gender" value="male" required>
+        <label for="male">Male</label>
+        <input type="radio" id="female" name="gender" value="female" required>
+        <label for="female">Female</label><br><br>
+        <label type="number" for="contactNumber">Contact Number</label> 
+        <input type="number" placeholder="Enter Your Phone Number" minlength="10" maxlength="12" required>
+        <input type="submit" value="Submit">
+    </form>
+    <form>
+        <h4>Button Attribute :</h4>
+        Name : <input type="text"><br><br>
+        Password : <input type="password"><br><br>
+        <input type="submit" name="action" value="Submit"/>
+        <input type="button" value="Edit">
+        <input type="reset" value="Reset">
+        <input type="button" value="Delete"><br><br>
+        <!--Button tag-->
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+        <button type="button">Delete</button>
+        <button type="button" onclick="alert('Hello World!')">Click Me!</button>
+    </form>
+    <h4>Select Attributes :</h4>
+    <form>
+        <label for="cars">Choose a car:</label>
+        <select name="cars" id="cars">
+            <option value="cars">Choose Car</option>
+            <option value="volvo">Volvo</option>
+            <option value="saab">Saab</option>
+            <option value="mercedes">Mercedes</option>
+            <option value="audi">Audi</option>
+        </select><br><br>
+        <label for="fruits">Choose a fruit:</label>
+        <select name="fruits" id="fruits" multiple size="2">
+            <option value="apple">Apple</option>
+            <option value="banana">Banana</option>
+            <option value="cherry">Cherry</option>
+            <option value="date">Date</option>
+        </select><br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h3>Textarea and Label Tag</h3>
+    <form>
+        <label>Address :</label>
+        <textarea name="address" cols="30" rows="4" placeholder="Enter Your Address"></textarea><br><br>
+        <label>Gender :</label>
+        <!--We can use input inside the label tag or outside the label tag-->
+        <label>
+            Male
+            <input type="radio" 
+                   name="gender"
+                   id="male" 
+                   value="male" />
+        </label>
+        <label>
+            Female
+            <input type="radio" 
+                   name="gender"
+                   id="female" 
+                   value="female" />
+        </label>
+        <label>
+            Other
+            <input type="radio" 
+                   name="gender"
+                   id="other" 
+                   value="other" />
+        </label>
+    </form>
+    <!--Fieldset-->
+    <h3>Fieldset & Legend</h3>
+    <form>
+        <p>Employee Personal Details:</p>
+        <fieldset>
+            <legend>Employee Details:</legend>
+            Name : <input type="text"><br><br>
+            Emp Id : <input type="text"><br><br>
+            Designation : <input type="text">
+        </fieldset>
+    </form><br>
+    <!--Legend-->
+    <form>
+        <fieldset>
+        <legend>Student Details</legend>
+        <label for="name">Name : <input type="text"></label><br><br>
+        <label for="contactno">Contact Number : <input type="number"></label><br><br>
+        <label for="email">Email : <input type="email"></label>
+        </fieldset>
+    </form><br>
+    <!--Datalist tag-->
+    <h3>Data List tag</h3>
+    <form>
+        <label>Enter Your City Name :</label>
+        <input list="city">
+        <datalist id="city">
+            <option value="Mumbai"/>
+            <option value="Pune"/>
+            <option value="Delhi"/>
+            <option value="Bangalore">
+            <option value="Chennai"/>
+        </datalist>
+    </form><br>
+</body>
+</html>
