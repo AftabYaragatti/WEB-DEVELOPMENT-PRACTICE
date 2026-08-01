@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-2C</title>
+    <style> 
+        *{
+            color: rgb(24, 8, 255);
+            background-color: rgb(190, 210, 248);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* Child Selectors */
+        div>h2{
+            color:rgb(255, 146, 3);
+        }
+        /* Pseudo Classes */
+        /* 1. :hover */
+        a:hover{
+            color:crimson;
+        }
+        /* 2. :focus */
+        input:focus {
+            outline: 3px solid red;
+        }
+        /* 3. :first-child */
+        p:first-child {
+            color: rgb(28, 255, 39);
+            font-weight: bold;
+        }
+        /* 4. :last-child */
+        h4:last-child {
+            color: rgb(213, 28, 255);
+            font-weight: bold;
+        }
+        /* 5. :not  */
+        h5:not(.one) {
+            color: rgb(251, 255, 0);
+            background-color:rgb(255, 0, 157);
+        }
+    </style>
+</head>
+<body>
+    <!--CSS SELECTORS-->
+    <!--IV. PSEUDO CLASSES :-->
+    <h1>PSEUDO CLASSES</h1>
+    <section>
+        <div>
+            <h2>1. :hover :</h2>
+            <p>
+                Styles elements when the user hovers over them.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <a href="https://example.com/">Hover this to see the effect</a><br>
+                <a href="http://example.com/">Non-secure link</a>
+            </div>
+        </div>
+        <div>
+            <h2>2. :focus :</h2>
+            <p>
+                Styles the elements when the user focus on any particular element.
+            </p>
+            <h3>Example :</h3>
+            <form>
+                Name : <input type="text">
+            </form>
+        </div>
+        <div>
+            <h2>3. :first-child :</h2>
+            <p>
+                Styles the element which is the first child of it's parent.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <p>This is the first child of the div.</p>
+                <p>This is the second child of the div.</p>
+            </div>
+        </div>
+        <div>
+            <h2>4. :last-child :</h2>
+            <p>
+                Styles the element which is the first child of it's parent.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <h4>This is the first child of the div.</h4>
+                <h4>This is the second child of the div.</h4>
+                <h4>This is the Last child of the div.</h4>
+            </div>
+        </div>
+        <div>
+            <h2>5. :not :</h2>
+            <p>
+                Helps to remove a particular element from the styling index or styling context.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <h5 class="one">class one : This is the first child of the div.</h5>
+                <h5 class="two">class two : This is the second child of the div.</h5>
+                <h5 class="three">class three : This is the Last child of the div.</h5>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

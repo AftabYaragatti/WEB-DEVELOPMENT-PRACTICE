@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-1</title>
+    <link rel="stylesheet" href="style-day1.css">
+    <style>
+        #abc{
+            color: blue;
+            background-color: rgb(227, 41, 78);
+            padding: 10px 10px;
+            font-style: italic;
+            margin: 10px 10px;
+        }
+        .xyz{
+            color: blue;
+            background-color: rgb(243, 66, 220);
+            padding: 10px 10px;
+            font-style: italic;
+            margin:10px 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--CSS : There are Three ways to write the CSS Code-->
+    <!--1. INLINE CSS : Inside the tag itself we need to use the CSS properties-->
+    <!--Example : <p style="color:green; font-size:30px"-->
+    <section>
+        <div>
+            <p><b>THIS IS HTML :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat ut ipsum soluta assumenda placeat recusandae a odit iste velit. Rerum veritatis consequatur, asperiores possimus iusto consequuntur pariatur doloribus sunt?</p>
+        </div>
+        <div style="color:blue; font-size: medium; font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; font-style: italic; background-color: aquamarine;padding: 10px 10px;">
+            <p><b>THIS IS HTML + CSS :</b> Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis molestias magnam perspiciatis ipsa. Iusto velit neque illo ipsum quae fuga commodi vero dicta similique iure itaque odit, corporis culpa eligendi!</p>
+        </div>
+    </section>
+    <!--2. INTERNAL CSS : Inside the <style> tag we need to use the CSS properties-->
+    <!--Example : <style> p { color: blue; } </style>-->
+    <section>
+        <div id="abc">
+            <p><b>CSS WITH ID ATTRIBUTE :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat ut ipsum soluta assumenda placeat recusandae a odit iste velit. Rerum veritatis consequatur, asperiores possimus iusto consequuntur pariatur doloribus sunt?</p>
+        </div>
+        <div class="xyz">
+            <p><b>CSS WITH CLASS ATTRIBUTE :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat ut ipsum soluta assumenda placeat recusandae a odit iste velit. Rerum veritatis consequatur, asperiores possimus iusto consequuntur pariatur doloribus sunt?</p>
+        </div>
+    </section>
+    <!--NOTE : INLINE & INTERNAL CSS : It affects only the single page itself(that same page where we are writing)-->
+    <!--3. EXTERNAL CSS : Separate file we need to use the CSS properties-->
+    <!--Example : style.css </style>-->
+    <section>
+        <div id="a">
+            <p><b>EXTERNAL CSS WITH ID ATTRIBUTE :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat ut ipsum soluta assumenda placeat recusandae a odit iste velit. Rerum veritatis consequatur, asperiores possimus iusto consequuntur pariatur doloribus sunt?</p>
+        </div>
+        <div class="x">
+            <p><b>EXTERNAL CSS WITH CLASS ATTRIBUTE :</b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab repellat ut ipsum soluta assumenda placeat recusandae a odit iste velit. Rerum veritatis consequatur, asperiores possimus iusto consequuntur pariatur doloribus sunt?</p>
+        </div>
+    </section>
+</body>
+</html>

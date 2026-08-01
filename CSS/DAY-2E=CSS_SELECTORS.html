@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-2C</title>
+    <style> 
+        *{
+            color: rgb(24, 8, 255);
+            background-color: rgb(190, 210, 248);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* Child Selectors */
+        div>h2{
+            color:rgb(255, 146, 3);
+        }
+        /* Pseudo Elements */
+        /* 1. ::before */
+        h4::before{
+            content: "🙏@";
+            color: rgb(255, 0, 0);
+        }
+        /* 2. ::after */
+        h5::after{
+            content: "@🙏";
+            color: rgb(255, 0, 0);
+        }
+        /* 3. ::first-line */
+        h6::first-line{
+            color: rgb(255, 0, 0);
+            font-size: 20px;
+            font-weight: bold;
+        }
+        /* 4. ::first-letter */
+        pre::first-letter{
+            color: rgb(255, 0, 238);
+            font-size: 30px;
+            font-weight: bold;
+        }
+        /* 5. ::placeholder */
+        input::placeholder{
+            color: rgb(255, 0, 0);
+            font-size: 16px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!--CSS SELECTORS-->
+    <!--IV. PSEUDO ELEMENTS :-->
+    <h1>PSEUDO ELEMENTS</h1>
+    <section>
+        <div>
+            <h2>1. ::before :</h2>
+            <p>
+                To insert some content before an element.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <h4>WELCOME TO THE CODING WORLD</h4>
+            </div>
+        </div>
+        <div>
+            <h2>2. ::after :</h2>
+            <p>
+                To insert some content after an element.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <h5>WELCOME TO THE CODING WORLD</h5>
+            </div>
+        </div>
+        <div>
+            <h2>3. ::first-line :</h2>
+            <p>
+                Styles the first line of text within a block element. Line breaks mark the beginning of a new line.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <h6>Hello Welcome you all for <br>Coding world</h6>
+            </div>
+        </div>
+        <div>
+            <h2>4. ::first-letter :</h2>
+            <p>
+                It Styles the first-letter of a word or a sentence.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <pre>Hello Welcome you all for Coding world</pre>
+            </div>
+        </div>
+        <div>
+            <h2>5. ::placeholder :</h2>
+            <p>
+                Styles the placeholder of a specific input field.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <form>
+                    Name :<input type="text" placeholder="Enter your name"><br><br>
+                    Email :<input type="email" placeholder="Enter your email"><br><br>
+                    Password :<input type="password" placeholder="Enter your password"><br><br>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+
+

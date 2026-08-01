@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-2B</title>
+    <style> 
+        /* Combinator Selectors */
+        *{
+            color: rgb(24, 8, 255);
+            background-color: rgb(190, 210, 248);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* 1. Descendant Selectors */
+        div p{
+            color:black;
+        }
+        /* 2. Child Selectors */
+        div>h2{
+            color:rgb(255, 146, 3);
+        }
+        /* 3. Adjacent Sibling Selectors */
+        h2+p{
+            font-weight: bold;
+        }
+        /* 4. General Sibling Selectors */
+        h4~p{
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <!--CSS SELECTORS-->
+    <!--II. COMBINATOR SELECTORS :-->
+    <h1>COMBINATOR SELECTORS</h1>
+    <section>
+        <div>
+            <h2>1. Descendant Selectors:</h2>
+            <p>
+                Targets an element inside another, such as paragraphs inside div.
+            </p>
+        </div>
+        <div>
+            <h2>2. Child Selector (>):</h2>
+            <p>
+                They only affects the direct child elements of a parent.
+            </p>
+        </div>
+        <div>
+            <h2>3. Adjacent Sibling Selector (+):</h2>
+            <p>
+                Styles an element immediately following another.
+            </p>
+        </div>
+        <div>
+            <h2>4. General Sibling Selector (~): </h2>
+            <p>
+                Styles all siblings that follow a specific element.
+            </p>
+        </div>
+        <div>
+            <h4>Example for General Sibling selector</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consectetur reprehenderit nesciunt architecto perferendis provident incidunt rerum, quas, neque illum veritatis quidem, repellat reiciendis atque dolore eveniet suscipit nisi soluta.</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur omnis quidem numquam consequuntur voluptatibus molestias, suscipit, eligendi praesentium aspernatur cumque dicta aut fugiat pariatur sit quod aliquid laboriosam odio neque?</p>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem fuga quasi accusantium perferendis voluptatum ratione iusto? Architecto soluta voluptate quo rerum omnis molestias, vero in ducimus perferendis iste. Voluptate, enim.</h4>
+        </div>
+    </section>
+</body>
+</html>

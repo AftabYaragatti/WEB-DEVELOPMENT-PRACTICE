@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-2C</title>
+    <style> 
+        *{
+            color: rgb(24, 8, 255);
+            background-color: rgb(190, 210, 248);
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* Child Selectors */
+        div>h2{
+            color:rgb(255, 146, 3);
+        }
+        /* Attribute Selectors */
+        /* 1.Presence Selectors */
+        input[type]{
+            background-color: rgb(199, 206, 162);
+            color: rgb(12, 133, 255);
+        }
+        /* 2.Attribute Value Selectors */
+        input[type="number"]{
+            background-color: rgb(138, 47, 250);
+            color:whitesmoke;
+        }
+        /* 3.Substring Matching Selector */
+        a[href^="http"] {
+            color: rgb(255, 26, 49);
+            font-weight: bold;
+        }
+        a[href^="https"] {
+            color: rgb(45, 248, 45);
+            font-weight: bold;
+        }
+        /* 4.Wildcard Selector */
+        a[href*="other"] {
+            text-decoration: none;
+        }
+        /* 5.Ends with selectors */
+        a[href$=".pdf"] {
+        color: red;
+        }
+        /* 6.Word Match Selector */
+        p[class~="highlight"] {
+            background: yellow;
+        }
+        /* 7.Hyphen Match Selector */
+        p[lang|="en"] {
+            color: rgb(255, 0, 217);
+        }
+    </style>
+</head>
+<body>
+    <!--CSS SELECTORS-->
+    <!--III. ATTRIBUTE SELECTORS :-->
+    <h1>ATTRIBUTE SELECTORS</h1>
+    <section>
+        <div>
+            <h2>1. Presence Selector:</h2>
+            <p>
+                 It selects elements that contain a specific attribute.
+            </p>
+            <h3>Example :</h3>
+            <form>
+                <fieldset>
+                <legend>Registration Form</legend>
+                First Name :<input type="text"><br><br>
+                Middle Name :<input type="text"><br><br>
+                Last Name :<input type="text"><br><br>
+                Password :<input type="password"><br><br>
+                Email Id :<input type="email"><br><br>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <h2>2. Attribute Value Selector:</h2>
+            <p>
+                It targets elements with a particular attribute value.
+            </p>
+            <h3>Example :</h3>
+            <form>
+                <fieldset>
+                <legend>Registration Form</legend>
+                Roll Number :<input type="number"><br><br>
+                Password :<input type="password"><br><br>
+                Email Id :<input type="email"><br><br>
+                </fieldset>
+            </form>
+        </div>
+        <div>
+            <h2>3. Substring Matching(^=):</h2>
+            <p>
+                It matches elements where the attribute contains a substring.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <a href="https://example.com/">Secure link</a>
+                <a href="http://example.com/">Non-secure link</a>
+            </div>
+        </div>
+        <div>
+            <h2>4. Wildcard Selector (*=): </h2>
+            <p>
+                Matches elements where the attribute value contains a specific string.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <a href="www.example.com/">This contains 'example' and is underlined.</a>
+                <a href="www.otherlink.com">This is not underlined.</a>
+            </div>
+        </div>
+        <div>
+            <h2>5. Ends With Selector ($=): </h2>
+            <p>
+                Matches elements whose attribute value ends with a specific string.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <a href="document.pdf">This link ends with '.pdf' and is red.</a>
+                <a href="document.docx">This link ends with '.docx' and its as it is</a>
+            </div>
+        </div>
+        <div>
+            <h2>6. Word Match Selector (~=):</h2>
+            <p>
+                Matches elements whose attribute contains a specific whole word (space-separated).
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <p class="highlight important">This paragraph has both 'highlight' and 'important' classes.</p>
+                <p class="highlight">This paragraph has only the 'highlight' class.</p>
+            </div>
+        </div>
+        <div>
+            <h2>7. Hyphen Match Selector (|=):</h2>
+            <p>
+                Matches elements whose attribute value starts with a word followed by a hyphen.
+            </p>
+            <h3>Example :</h3>
+            <div>
+                <p lang="en-US">This paragraph is in English (US).</p>
+                <p lang="en-GB">This paragraph is in English (GB).</p>
+                <p lang="fr">This paragraph is in French.</p>
+        </div>
+    </section>
+</body>
+</html>
