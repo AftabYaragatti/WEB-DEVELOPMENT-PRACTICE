@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-4</title>
+    <style>
+        /* Background-Properties */
+        .A{
+            background-color:aquamarine;
+            padding:10px 10px;
+        }
+        .B{
+            padding:10px 10px;
+            background-image: url("sample_image2.jpg");
+            background-repeat: no-repeat;
+            background-position: 20%;
+            background-size:contain;
+            color:white;
+            height:200px;
+        }
+        .C{
+            padding:10px 10px;
+            background-image: url("sample_image2.jpg");
+            background-repeat: no-repeat;
+            background-position: 0%;
+            background-size:cover;
+            height: 300px;
+            color:white;
+        }
+        .D{
+            padding:10px 10px;
+            background-image: url("sample_image2.jpg");
+            background-position: 0%;
+            background-size:cover;
+            height: 300px;
+            color:white;
+            background-attachment: fixed;
+        }
+        .E{
+           background:linear-gradient(45deg,yellow,rgb(36, 118, 224));
+           padding:10px 10px;
+        }
+        .F{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #88fe7b);
+        }
+        .G1{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #88fe7b);
+            background-origin: content-box; /* Gradient starts inside the padding */
+        }
+        .G2{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #88fe7b);
+            background-origin: padding-box; /* Gradient starts inside the border */
+        }
+        .G3{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #88fe7b);
+            background-origin: border-box; /* Gradient starts outside the border */
+        }
+        .G4{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #88fe7b);
+            background-origin: initial; /* Default value, same as border-box */
+        }
+        .H1{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #a97bfe);
+            /* Determines the painting area where the background is visible. */
+            background-clip: padding-box;
+        }
+        .H2{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #a97bfe);
+            /* Determines the painting area where the background is visible. */
+            background-clip: content-box;
+        }
+        .H3{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #a97bfe);
+            /* Determines the painting area where the background is visible. */
+            background-clip: border-box;
+        }
+        .H4{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #a97bfe);
+            /* Determines the painting area where the background is visible. */
+            background-clip:text;
+        }
+        .H5{
+            width: 300px;
+            height: 150px;
+            border: 15px dashed rgba(0, 0, 0, 0.5);
+            padding: 20px 20px;
+            background: linear-gradient(45deg, #fff45a, #a97bfe);
+            /* Determines the painting area where the background is visible. */
+            background-clip:initial;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p class="A">Hello Welcome To Coding World</p>
+        <p class="B">Hello Welcome To Ninja World</p>
+        <p class="C">Hello Welcome To Web Development World</p>
+        <p class="D">Hello Welcome To Banglore</p>
+        <p class="E">Hello Welcome To India</p>
+        <p class="F">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Itaque quo, quod dolor pariatur ex sint ipsa vero non sapiente magnam vitae adipisci atque accusantium! Rem cum quas minus sint inventore.</p>
+        <p class="G1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="G2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="G3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="G4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="H1">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="H2">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="H3">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="H4">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        <p class="H5">Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+</body>
+</html>
