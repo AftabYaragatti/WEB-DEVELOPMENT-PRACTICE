@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-9</title>
+    <style>
+        /* Static */
+        /* NOTE : The element does not move, even though top and left are written. */
+        .box1{
+            position: static;
+            top:50px;
+            left:100px;
+            background:skyblue;
+        }
+        /* Relative : The element stays in the normal document flow, but it can be moved relative to its original position. */
+        .box2{
+            position:relative;
+            top:30px;
+            left:50px;
+            width:200px;
+            background:orange;
+        }
+        /* Fixed : A fixed element is positioned relative to the browser viewport. */
+        .box3{
+            position:fixed;
+            top:30px;
+            left:50px;
+            width:200px;
+            background:rgb(40, 254, 2);
+        }
+        /* Static : The element is removed from the normal document flow. */
+        .parentbox{
+            position:relative;
+            width:300px;
+            height:200px;
+            background:lightgray;
+        }
+        .childbox{
+            position:absolute;
+            top:10px;
+            right:10px;
+            background:red;
+            color:white;
+            padding:10px;
+        }
+        /* Sticky : Sticky behaves like relative until the scroll reaches a specified offset. Then it behaves like fixed within its scrolling container.*/
+        .box4{
+            position:sticky;
+            top:30px;
+            left:50px;
+            width:200px;
+            background:rgb(6, 2, 254);
+        }
+/* | Property | Positive Value | Negative Value |
+| -------- | -------------- | -------------- |
+| top      | Moves down     | Moves up       |
+| left     | Moves right    | Moves left     |
+| right    | Moves left     | Moves right    |
+| bottom   | Moves up       | Moves down     |
+ */
+        .box5{
+            position:relative;
+            top:20px; /*-20px negative value for reverse like bottom*/
+            background-color: chartreuse;
+        }
+        .box6{
+            position:relative;
+            left:20px;
+            background-color: chartreuse;
+        }
+        .box7{
+            position:relative;
+            bottom:20px;
+            background-color: chartreuse;
+        }
+        .box8{
+            position:relative;
+            right:20px;
+            background-color: chartreuse;
+        }
+        /* Z-Index */
+        .red{
+            position:absolute;
+            width:200px;
+            height:200px;
+            background:red;
+            z-index:-1;
+        }
+        .pink{
+            position:absolute;
+            width:200px;
+            height:200px;
+            right:50px;
+            bottom:50px;
+            background:rgb(255, 0, 204);
+            z-index:1;
+        }
+        .blue{
+            position:absolute;
+            width:200px;
+            height:200px;
+            background:blue;
+            left:50px;
+            top:50px;
+            z-index:2;
+        }
+    </style>
+</head>
+<body>
+   <div class="box1">Static Box</div> 
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box3">Fixed Box</div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+    <div class="parentbox">
+        <div class="childbox">
+            Absolute Box
+        </div>
+    </div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box4">Sticky Box</div> 
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box2">Relative Box</div> 
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box5">Top Position</div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box6">Left Position</div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box7">Bottom Position</div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="box8">Right Position</div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+   <div class="red"></div>
+   <div class="blue"></div>
+   <div class="pink"></div>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum et impedit excepturi adipisci quasi maxime, saepe mollitia quos inventore temporibus vitae dignissimos consequuntur sed soluta aspernatur optio dolor officia magni.</p>
+</body>
+</html>

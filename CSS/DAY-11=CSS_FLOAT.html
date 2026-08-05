@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .left {
+            float: left;
+            width: 350px;
+            height:70px;
+            padding:20px 0px;
+            background-color: rgb(255, 238, 6);
+        }
+        .right {
+            float: right;
+            width: 350px;
+            height:70px;
+            padding:20px 0px;
+            background-color: rgb(67, 255, 5);
+        }
+        .none {
+            float: none;
+            width: 350px;
+            height:70px;
+            padding:20px 0px;
+            background-color: rgb(6, 193, 255);
+        }
+        /* Inherit */
+        .parent {
+            float: left;
+        }
+        .child {
+            float: inherit;
+            width: 350px;
+            height: 70px;
+            background-color: rgb(0, 221, 255);
+        }
+        /* Clear Properties */
+        /* Float without Clear */
+        .float-left {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        .clear-left {
+            background-color: lightgreen;
+        }
+        /* Float with Clear */
+        .float-left1 {
+            float: left;
+            width: 100px;
+            height: 100px;
+            background-color: lightblue;
+        }
+        .clear-left1 {
+            clear:left;
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+    <h3>Float : allows elements to be positioned to the left or right of their container, allowing inline content (like text) to wrap around it. It is commonly used to create layouts, such as columns, where the text or other elements wrap around floated items.</h3>
+    <div class="left">Left Float</div>
+    <div class="right">Right Float</div>
+    <div class="none">None Float</div>
+    <div class="parent">
+        Inherit-Parent
+        <div class="child">Inherit Child Float</div>
+    </div><br><br><br><br><br><br><br><br>
+    <br><br><hr><br><br>
+    <h3>Clear :The CSS clear property controls the behavior of elements in relation to floated elements. It specifies whether an element should be placed next to or below floated elements.</h3>
+    <!--With Clear-->
+    <div class="float-left1">Floated Left</div>
+    <div class="clear-left1">Cleared Left</div><br><br><br>
+    <!--Without Clear-->
+    <div class="float-left">Floated Left</div>
+    <div class="clear-left">Cleared Left</div>
+
+    <h2>NOTE : Clear : left/right/both/none</h2>
+</body>
+</html>

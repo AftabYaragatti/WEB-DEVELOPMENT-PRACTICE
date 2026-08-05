@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        /* Case 1 : relative-absolute position */
+        .purple {
+            position: relative;
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan {
+            position: absolute;
+            bottom: 10px;
+            left: 70px;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: cyan;
+        }
+        /* Case 2 : static-absolute position */
+        .purple1 {
+            position: static;
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan1 {
+            position: absolute;
+            bottom: 50px;
+            left: 500px;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 100px;
+            width: 100px;
+            background-color: cyan;
+        }
+    </style>
+</head>
+<body>
+    <h3>1st case: When the parent property value is positioned means the position property of the parent is not equal to static.</h3>
+    <div class="purple">
+        I am positioned and parent
+        <div class="cyan"> I am absolute element </div>
+    </div><br><br><br><br><br><br><br>
+    <h3>2nd Case: When the parent element is not positioned.</h3>
+    <div class="purple1">
+        I am not positioned and parent
+        <div class="cyan1"> I am absolute element </div>
+    </div>
+</body>
+</html>

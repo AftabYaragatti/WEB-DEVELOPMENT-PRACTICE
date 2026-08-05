@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        /* Static Position */
+        .purple {
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan {
+            position: static;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            top:100px;
+        }
+        /* Relative Position */
+        .purple1 {
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan1 {
+            position: relative;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            top:40px;
+            left:60px;
+        }
+        /* Absolute Position */
+        .purple2 {
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan2 {
+            position: absolute;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+        }
+        /* Fixed Position */
+        .purple3 {
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+            overflow: visible;
+        }
+        .cyan3 {
+            position: Fixed;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            top:40px;
+            left:60px;
+        }
+        /* Sticky Position */
+        .purple4 {
+            height: 200px;
+            width: 200px;
+            color: black;
+            font-size: 1.5rem;
+            padding: 10px;
+            background-color: purple;
+        }
+        .cyan4 {
+            position: sticky;
+            font-size: 1.5rem;
+            padding: 10px;
+            height: 200px;
+            width: 200px;
+            background-color: cyan;
+            top:20px;
+            left:300px;
+        }
+    </style>
+</head>
+<body>
+    <!--STATIC POSITION-->
+    <h4>STATIC POSITION : It is the default position value for the element. Under static position, elements are positioned according to the normal flow of the page.
+    Note: left, right, top, and bottom properties will not affect if the position is static.
+    </h4>
+    <div class="purple">
+        I am reference
+    </div>
+    <div class="cyan">
+        I am static element
+    </div><hr><br><br><br><br><br>
+    <!--RELATIVE POSITION-->
+    <h4>RELATIVE POSITION : In this case, the element remains in the normal flow of the document but left, right, top, and bottom affects. Elements get shifted from their original position in the document creating vacant space and other elements may adjust themselves according to the vacant space left by the element.</h4>
+    <div class="purple1">
+        I am reference
+    </div>
+    <div class="cyan1">
+        I am relative element
+    </div><hr><br><br><br><br><br>
+    <!--STICKY POSITION-->
+    <h4>STICKY POSITION : It's kind of a little tricky but very easy to understand. We can think of sticky as a combination of relative and fixed. Remember fixed elements remain fixed at some position but the sticky element will behave relative to a certain point and after behave like a fixed.</h4>
+    <div class="purple4">
+        I am reference
+    </div>
+    <div class="cyan4">
+        I am sticky element
+    </div><hr><br><br><br><br><br>
+    <!--ABSOLUTE POSITION-->
+    <h4>ABSOLUTE POSITION : position: absolute removes an element from the normal document flow and positions it relative to its nearest positioned ancestor (an ancestor with position: relative, absolute, fixed, or sticky).<br>Important Rule
+    Absolute positioning works relative to the nearest positioned ancestor.
+    A positioned ancestor is an element whose position is:
+    relative
+    absolute
+    fixed
+    sticky
+    position: static is not considered a positioned ancestor.</h4><br><br><br><br><br>
+    <div class="purple2">
+        I am reference
+    </div>
+    <div class="cyan2">
+        I am absolute element
+    </div><hr><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    <!--FIXED POSITION-->
+    <h4>FIXED POSITION : Fixed element does not follow normal document flow and positions themselves relative to <HTML> tag. This element always stick to the screen.</h4><br><br><br><br><br>
+    <div class="purple3">
+        I am reference
+    </div>
+    <div class="cyan3">
+        I am fixed element
+    </div><hr><br><br><br><br><br>
+</body>
+</html>

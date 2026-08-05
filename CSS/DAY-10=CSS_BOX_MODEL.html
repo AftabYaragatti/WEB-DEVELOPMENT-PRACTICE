@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .boxA{
+            width:250px;
+            height:120px;
+            background-color: aquamarine;
+        }
+        /* NOTE : Always remember this order:
+        Margin
+        Border
+        Padding
+        Content */
+        .boxB{
+            width:250px;
+            height:120px;
+            background-color: rgb(255, 127, 253);
+            margin:10px 10px;
+            border:5px solid blue;
+            padding:20px 20px;
+        }
+        .boxC{
+            width:250px;
+            height:120px;
+            background-color: rgb(255, 127, 253);
+            margin:10px 10px;
+            border:5px solid blue;
+            padding:20px 20px;
+            box-sizing:border-box;
+        }
+        /* Display Properties with Box Model */
+        .box{
+            width:200px;
+            height:120px;
+            padding:20px 20px;
+            margin:20px 20px;
+            border:2px solid rgb(86, 86, 255);
+            background-color: rgb(255, 79, 114);
+            display: block;
+        }
+        .box1{
+            width:200px;
+            height:120px;
+            padding:20px 20px;
+            margin:20px 20px;
+            border:2px solid rgb(86, 86, 255);
+            background-color: rgb(79, 255, 88);
+            display: inline;
+        }
+        .box2{
+            width:200px;
+            height:120px;
+            padding:20px 20px;
+            margin:20px 20px;
+            border:2px solid rgb(86, 86, 255);
+            background-color: rgb(79, 240, 255);
+            display: flex;
+        }
+        .box3{
+            width:200px;
+            height:120px;
+            padding:20px 20px;
+            margin:20px 20px;
+            border:2px solid rgb(86, 86, 255);
+            background-color: rgb(255, 79, 188);
+            display: grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="boxA">
+        BOX A
+    </div>
+    <div class="boxB">
+        BOX B
+    </div>
+    <div class="boxC">
+        BOX C
+    </div>
+    <h4>BLOCK WISE BOX</h4>
+    <div class="boxD">
+        <div class="box">A</div>
+        <div class="box">B</div>
+        <div class="box">C</div>
+        <div class="box">D</div>
+        <div class="box">E</div>
+    </div>
+    <h4>INLINE WISE BOX</h4>
+    <div class="boxD">
+        <div class="box1">A</div>
+        <div class="box1">B</div>
+        <div class="box1">C</div>
+        <div class="box1">D</div>
+        <div class="box1">E</div>
+    </div>
+    <h4>FLEX WISE BOX</h4>
+    <div class="boxD">
+        <div class="box2">A</div>
+        <div class="box2">B</div>
+        <div class="box2">C</div>
+        <div class="box2">D</div>
+        <div class="box2">E</div>
+    </div>
+    <h4>GRID WISE BOX</h4>
+    <div class="boxD">
+        <div class="box3">A</div>
+        <div class="box3">B</div>
+        <div class="box3">C</div>
+        <div class="box3">D</div>
+        <div class="box3">E</div>
+    </div>
+</body>
+</html>
