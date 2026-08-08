@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-12</title>
+    <style>
+        /* Flex Direction Property */
+        .flex-main1{
+            display:flex;
+            flex-direction:row;
+        }
+        .flex-main2{
+            display:flex;
+            flex-direction:row-reverse;
+        }
+        .flex-main3{
+            display:flex;
+            flex-direction:column;
+        }
+        .flex-main4{
+            display:flex;
+            flex-direction:column-reverse;
+        }
+        .box{
+            background-color: darkorchid;
+            border:3px solid black;
+            color:yellow;
+            padding:10px 10px;
+            align-items: center;
+        }
+
+        /* Flex Direction Property */
+        .flex-mainA{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap;
+        }
+        .flex-mainB{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+        }
+        .flex-mainC{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:wrap-reverse;
+        }
+
+        /* Flex Flow Shorthand with gap Property */
+        .flex-main1A{
+            display:flex;
+            flex-flow:row nowrap;
+            gap:10px;
+        }
+        .flex-main1B{
+            display:flex;
+            flex-flow:row wrap;
+            row-gap:20px;
+        }
+        .flex-main1C{
+            display:flex;
+            flex-flow:row wrap-reverse;
+            gap:10px;
+        }
+        .flex-main1D{
+            display:flex;
+            flex-flow:row-reverse nowrap;
+            gap:20px;
+        }
+
+        /* Justify Content Property */
+        .flex-main2A{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: flex-start;
+        }
+        .flex-main2B{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: flex-end;
+        }
+        .flex-main2C{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+        }
+        .flex-main2D{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: space-between;
+        }
+        .flex-main2E{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: space-around;
+        }
+        .flex-main2F{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: space-evenly;
+        }
+
+         /* Align Items Property */
+        .flex-main3A{
+            display:flex;
+            height:300px;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: stretch;
+            background-color: aqua;
+        }
+        .flex-main3B{
+            display:flex;
+            height:300px;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: flex-start;
+            background-color: aqua;
+        }
+        .flex-main3C{
+            display:flex;
+            height:300px;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: flex-end;
+            background-color: aqua;
+        }
+        .flex-main3D{
+            display:flex;
+            height:300px;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: center;
+            background-color: aqua;
+        }
+        .flex-main3E{
+            display:flex;
+            height:300px;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            justify-content: center;
+            align-items: baseline;
+            background-color: aqua;
+        }
+        /* NOTE : JUSTIFY = Along the main direction
+        JUSTIFY
+        → → → → →
+        ALIGN ITEMS = Across the main direction 
+        JUSTIFY = Main Axis
+        ALIGN ITEMS = Cross Axis */
+
+
+        /* NOTE : align-items vs align-content
+        This is the most important distinction.
+        Suppose:
+        1  2  3
+        4  5  6
+        7  8  9
+        align-items
+        Controls the items inside each row.
+        Row 1 → items
+        Row 2 → items
+        Row 3 → items
+        align-content 
+        Controls the rows themselves.
+        Row 1
+        ↓
+        Row 2
+        ↓
+        Row 3 */
+        /* Align-Content Property */
+        .container {
+            height: 200px;
+            width:180px;
+            padding: 10px 10px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            background-color: chartreuse;
+            align-items:center;
+            align-content:flex-start; /* Like top*/
+        }
+        .con{
+            background-color: cadetblue;
+            padding:10px 10px;
+            border:2px solid blue;
+        }
+
+        /* Flex Child Property */
+        /* Flex Basis */
+        .main{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            gap:10px;
+            background-color: aquamarine;
+        }
+        .boxA{
+            flex-basis:50px; /* Basis : starting size : 50px; after that i can modify the size */
+            background-color:rgb(255, 165, 29);
+            padding:10px 10px;
+            text-align: center;
+            border:2px solid blue;
+        }
+
+        /* Flex Grow */
+        .mainA{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            gap:10px;
+            background-color: aquamarine;
+        }
+        .boxB{
+            flex-basis:10px;
+            background-color:rgb(255, 165, 29);
+            padding:10px 10px;
+            text-align: center;
+            border:2px solid blue;
+        }
+        .box-1A{
+            flex-grow:1;
+        }
+        .box-2A{
+            flex-grow:2;
+        }
+        .box-3A{
+            flex-grow:1;
+        }
+
+        /* Flex Shrink */
+        .mainB{
+            display:flex;
+            flex-direction:row;
+            flex-wrap:nowrap;
+            gap:10px;
+            background-color: aquamarine;
+        }
+        .boxC{
+            background-color:rgb(255, 165, 29);
+            padding:10px 10px;
+            text-align: center;
+            border:2px solid blue;
+            align-self:center;
+        }
+        .box-1B{
+            flex-basis:10px;
+            flex-grow:1;
+            flex-shrink:1;
+        }
+        .box-2B{
+            flex-basis:50px;
+            flex-shrink:1;
+            flex-grow:4;
+        }
+        .box-3B{
+            flex-basis:100px;
+            flex-shrink:1;
+            flex-grow:1;
+        }
+        /* width is the normal width property.
+        flex-basis tells Flexbox what the item's initial size should be along the main axis. */
+        /* NOTE : 
+        flex-basis : auto/20%/20px/2rem
+        flex-grow : 0(default)/1(takes equal share of empty spaces)
+        flex-shrink : 1(shrinks-evenly)/0(preventing elements from shrinking entirely) */
+        /* .box {
+        flex-basis: 150px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        }
+
+        Meaning:
+
+        flex-basis: 150px
+            ↓
+        Start around 150px
+
+        flex-grow: 1
+            ↓
+        Can take extra space
+
+        flex-shrink: 1
+            ↓
+        Can become smaller if necessary */
+
+        /* JUSTIFY → MAIN
+
+        ALIGN-ITEMS → ALL
+
+        ALIGN-SELF → ONE
+
+        ORDER → SEQUENCE */
+
+        /* Align Self and Shorthand Flex Property */
+        .mainD{
+            display: flex;
+            flex-direction: row;
+            flex-wrap:nowrap;
+            gap:10px;
+            height:300px;
+            background-color: aqua;
+        }
+        .boxD{
+            background-color:rgb(255, 165, 29);
+            padding:10px 10px;
+            text-align: center;
+            border:2px solid blue;
+            height:100px;
+            width:100px;
+        }
+        .box-D1{
+            flex:10px 1 1;
+            align-self: flex-start;
+        }
+        .box-D2{
+            flex:50px 4 1;
+            align-self: center;
+        }
+        .box-D3{
+            flex:100px 1 ;
+            align-self: flex-end;
+        }
+        /* align-items → controls all items.
+        align-self → controls one specific item */
+
+        /* Order property */
+        /* NOTE : Because Flexbox arranges items from smallest order to largest order:
+        Box 2 → order: 1
+        Box 3 → order: 2
+        Box 1 → order: 3 */
+        .mainE{
+            display: flex;
+            flex-direction: row;
+            flex-wrap:nowrap;
+            gap:10px;
+            height:300px;
+            background-color: aqua;
+        }
+        .boxE{
+            background-color:rgb(255, 165, 29);
+            padding:10px 10px;
+            text-align: center;
+            border:2px solid blue;
+            height:100px;
+            width:100px;
+        }
+        .box-E1{
+            flex:10px 1 1;
+            align-self:center;
+            order:3;
+        }
+        .box-E2{
+            flex:50px 4 1;
+            align-self: center;
+            order:1;
+        }
+        .box-E3{
+            flex:100px 1 ;
+            align-self: center;
+            order:2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Parent Properties in Flex</h1>
+    <h2 style="color:red; text-align:center;">FLEX DIRECTION : ROW/ROW-REVERSE/COLUMN/COLUMN-REVERSE</h2>
+    <h3>Flex Direction Property : Row</h3>
+    <div class="flex-main1">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Flex Direction Property : Row-Reverse</h3>
+    <div class="flex-main2">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Flex Direction Property : Column</h3>
+    <div class="flex-main3">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Flex Direction Property : Column-Reverse</h3>
+    <div class="flex-main4">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+
+
+    <h2 style="color:red; text-align:center;">FLEX-WRAP : WRAP/NOWRAP/WRAP-REVERSE</h2>
+    <p>Wrap : It decides whether flex items should stay in one line or move to the next line when there isn't enough space.
+    Wrap:If there isn't enough space, go to the next line..
+    NoWrap:Don't go to the next line..
+    </p>
+    <h3>Flex Wrap Property : Wrap</h3>
+    <div class="flex-mainA">
+        <div class="box">BOX 1 : Lorem ipsum dolor sit, amet consectetur adipisicing elit. Obcaecati minus magnam reprehenderit impedit, dolorum aliquam corrupti iusto, dicta voluptates amet consequatur placeat ipsum beatae tempora tenetur, sapiente aut delectus rem.</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam accusantium expedita eligendi qui libero in quod quasi sapiente, debitis sequi beatae laborum magnam, alias, architecto vero incidunt doloremque aspernatur labore!</div>
+        <div class="box">BOX 3 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis quisquam voluptatibus dolore nemo neque blanditiis odit dolor animi nostrum. Deleniti sit vero modi. Saepe voluptatibus dolorum ad cum! Repudiandae.</div>
+        <div class="box">BOX 4 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis quisquam voluptatibus dolore nemo neque blanditiis odit dolor animi nostrum. Deleniti sit vero modi. Saepe voluptatibus dolorum ad cum! Repudiandae.</div>
+        <div class="box">BOX 5 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis quisquam voluptatibus dolore nemo neque blanditiis odit dolor animi nostrum. Deleniti sit vero modi. Saepe voluptatibus dolorum ad cum! Repudiandae.</div>
+    </div>
+    <h3>Flex Wrap Property : NoWrap</h3>
+    <div class="flex-mainB">
+        <div class="box">BOX 1 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi quaerat assumenda exercitationem animi omnis, nobis quas cumque, consequuntur, sint nihil quam eaque enim earum sunt sequi temporibus architecto. Reprehenderit, quo!</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Culpa, sit, enim voluptas numquam dolorum iste autem perferendis molestiae magnam repellendus blanditiis fugit dolor temporibus maiores. Vel sint ipsa tempora modi!</div>
+        <div class="box">BOX 3 : Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sequi, corrupti dolor? Officia quidem praesentium numquam, sapiente, nobis reprehenderit accusamus expedita et excepturi cum non nostrum itaque ullam eum. Et, dolore.</div>
+        <div class="box">BOX 4 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis quisquam voluptatibus dolore nemo neque blanditiis odit dolor animi nostrum. Deleniti sit vero modi. Saepe voluptatibus dolorum ad cum! Repudiandae.</div>
+        <div class="box">BOX 5 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique quis quisquam voluptatibus dolore nemo neque blanditiis odit dolor animi nostrum. Deleniti sit vero modi. Saepe voluptatibus dolorum ad cum! Repudiandae.</div>
+    </div>
+    <h3>Flex Wrap Property : Wrap-Reverse</h3>
+    <div class="flex-mainC">
+        <div class="box">BOX 1 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quidem modi tempore praesentium dolores, quibusdam, debitis libero eius vero molestiae mollitia commodi animi. Adipisci iusto enim fugiat magnam omnis, repellat laboriosam?</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus rerum repellendus atque saepe temporibus corrupti obcaecati velit minus! Amet non quo, doloremque ratione inventore temporibus explicabo optio? Voluptate, nam saepe.</div>
+        <div class="box">BOX 3 : Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tempora ut quaerat distinctio voluptatem, libero quasi mollitia possimus ipsam sequi, quidem eligendi. Sequi, nihil! Veniam natus culpa blanditiis earum consequuntur sunt.</div>
+    </div>
+
+
+    <h2 style="color:red; text-align:center;">Flex-Flow:Direction Wrap(Shorthand Property) with Gap Property</h2>
+    <h3>Flex-Flow :Row NoWrap</h3>
+    <div class="flex-main1A">
+        <div class="box">BOX 1 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia provident officia, blanditiis impedit labore quidem itaque! Repellendus, totam magnam necessitatibus vero reiciendis mollitia, sed error vel nihil tenetur recusandae iste.</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Minima consequuntur, vel error deserunt illo a saepe eum amet labore quis dolores magni velit, earum dolorum nesciunt quasi laboriosam. Expedita, error!</div>
+        <div class="box">BOX 3 Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus est ut, odit beatae ipsam, cumque expedita pariatur odio explicabo iure ullam architecto nemo quo numquam saepe eos voluptates atque aliquam.</div>
+    </div>
+    <h3>Flex-Flow :Row Wrap</h3>
+    <div class="flex-main1B">
+        <div class="box">BOX 1 : Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ab inventore sed unde mollitia velit, facilis natus placeat dolorum nostrum. Eligendi consequuntur atque distinctio eius dignissimos, placeat dicta explicabo quasi esse?</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit, amet consectetur adipisicing elit. Necessitatibus sit neque hic, amet architecto rem voluptates aperiam! Nemo blanditiis alias porro enim vitae, voluptatem quisquam, facere nam possimus eos quis.</div>
+        <div class="box">BOX 3 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptas rerum voluptatum vitae beatae, ullam perferendis eveniet debitis cupiditate repellendus assumenda perspiciatis, voluptate nulla, temporibus accusantium enim? Omnis magnam provident fuga?</div>
+    </div>
+    <h3>Flex-Flow :Row Wrap-Reverse</h3>
+    <div class="flex-main1C">
+        <div class="box">BOX 1 : Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ratione sunt ipsam ab, non doloribus cumque. Corporis nam nulla est, amet assumenda eligendi at animi ipsum, esse ab in ullam minus!</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt neque repellendus libero itaque est sequi, dolorem nostrum, quibusdam a illo reiciendis odio cupiditate debitis nisi optio aliquid dolore ipsum veniam?</div>
+        <div class="box">BOX 3 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis optio totam provident perspiciatis repellat dolore inventore quibusdam sint quisquam et, quae non repudiandae? Debitis, nostrum. Tempore quos temporibus odio quae?</div>
+    </div>
+    <h3>Flex-Flow :Row-Reverse NoWrap</h3>
+    <div class="flex-main1D">
+        <div class="box">BOX 1 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Est mollitia minus accusamus quidem magni quo officia illo exercitationem! Quidem rem rerum quisquam modi, quia nostrum est reiciendis sunt eaque voluptatum!</div>
+        <div class="box">BOX 2 : Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor ratione deleniti repellat ipsa nemo. Fugit vel pariatur culpa tenetur similique praesentium cumque illum quae eaque quam. Eos delectus consectetur minima!</div>
+        <div class="box">BOX 3 : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nisi minus, nihil impedit placeat id ut nostrum magni tenetur nam nulla, autem dolorum, soluta vel! Sequi officia provident temporibus laboriosam sunt.</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">JUSTIFY CONTENT : Flex-Start/Flex-End/Center/Space-Between/Space-Around/Space-Evenly</h2>
+    <h3>Justify Content Property : Flex-Start</h3>
+    <div class="flex-main2A">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Justify Content Property : Flex-End</h3>
+    <div class="flex-main2B">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Justify Content Property : Center</h3>
+    <div class="flex-main2C">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Justify Content Property : Space-Between</h3>
+    <div class="flex-main2D">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Justify Content Property : Space-Around</h3>
+    <div class="flex-main2E">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Justify Content Property : Space-Evenly</h3>
+    <div class="flex-main2F">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">Align Items : Stretch/flex-start/flex-end/center/baseline</h2>
+    <h3>Align Items Property : Stretch</h3>
+    <div class="flex-main3A">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Align Items Property : Flex-Start</h3>
+    <div class="flex-main3B">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Align Items Property : Flex-End</h3>
+    <div class="flex-main3C">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Align Items Property : Center</h3>
+    <div class="flex-main3D">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+    <h3>Align Items Property : Baseline</h3>
+    <div class="flex-main3E">
+        <div class="box">BOX 1</div>
+        <div class="box">BOX 2</div>
+        <div class="box">BOX 3</div>
+    </div>
+
+    <!-- NOTE : Align-Content Use only when we have some extra spaces in the cros-axis(align-items) It onlys works when flex-wrap:wrap -->
+    <h2 style="color:red; text-align:center;">Align Content : Flex-Start/Flex-End/Center/Space-Between/Space-Around/Space-Evenly/center/left/right</h2>
+    <div class="container">
+        <div class="con">1</div>
+        <div class="con">2</div>
+        <div class="con">3</div>
+        <div class="con">4</div>
+        <div class="con">5</div>
+        <div class="con">6</div>
+    </div>
+
+    <!--NOTE : Important: flex-wrap Does NOT Mean "Put Everything on Multiple Lines"
+    This is a common misunderstanding.
+    flex-wrap: wrap means:
+    "You are allowed to create another line if necessary."
+    It doesn't mean:
+    1
+    2
+    3
+    4
+    5
+    Instead, it fills the available space first:
+    1  2  3
+    4  5
+    How many items appear on each line depends on the available space and item sizes.
+    Note : flex-wrap Works With flex-direction
+    This is important.
+    .container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }-->
+
+
+    <!-- CHild Property in Flex -->
+    <!-- BASIS = Start
+    GROW = Get bigger
+    SHRINK = Get smaller -->
+    <h1>Child Item Flex Properties</h1>
+    <p>flex-basis  → Starting size.<br>
+    flex-grow   → How much extra space to take<br>
+    flex-shrink → How much to reduce when space is insufficient<br></p>
+    <h2 style="color:red; text-align:center;">Flex-Basis</h2>
+    <div class="main">
+        <div class="boxA box-1">BOX 1</div>
+        <div class="boxA box-2">BOX 2</div>
+        <div class="boxA box-3">BOX 3</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">Flex-Grow</h2>
+    <div class="mainA">
+        <div class="boxB box-1A">BOX 1</div>
+        <div class="boxB box-2A">BOX 2</div>
+        <div class="boxB box-3A">BOX 3</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">Flex-Shrink</h2>
+    <div class="mainB">
+        <div class="boxC box-1B">BOX 1</div>
+        <div class="boxC box-2B">BOX 2</div>
+        <div class="boxC box-3B">BOX 3</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">Align-Self</h2>
+    <p>NOTE : align-self menas controls ONE flex item.</p>
+    <div class="mainD">
+        <div class="boxD box-D1">BOX 1</div>
+        <div class="boxD box-D2">BOX 2</div>
+        <div class="boxD box-D3">BOX 3</div>
+    </div>
+
+    <h2 style="color:red; text-align:center;">Align-Self</h2>
+    <p>NOTE : order controls the visual order in which flex items are displayed.</p>
+    <div class="mainE">
+        <div class="boxE box-E1">BOX 1</div>
+        <div class="boxE box-E2">BOX 2</div>
+        <div class="boxE box-E3">BOX 3</div>
+    </div>
+
+    <h1>IMPORTANT NOTE : FOR FLEX PROPERTIES</h1>
+    <h3>Parent Item Properties :</h3>
+    <ol>
+        <li>Display : flex/inline-flex;</li>
+        <li>flex-direction : row/row-reverse/column/column-reverse</li>
+        <li>flex-wrap:wrap/nowrap/reverse</li>
+        <li>flex-flow : [flex-direction] [flex-wrap]</li>
+        <li>justify-content:center/flex-start/flex-end/space-between/space-around/space-evenly</li>
+        <li>align-items:stretch/center/flex-start/flex-end/baseline</li>
+        <li>align-content:center/flex-start/flex-end/space-between/space-around/space-evenly</li>
+        <li>gap:10px</li>
+        <li>row-gap:20px;</li>
+        <li>Background-color:blue;</li>
+    </ol>
+    <h3>Child Item Properties :</h3>
+    <ol>
+        <li>flex-grow:</li>
+        <li>flex-shrink:</li>
+        <li>flex-basis:</li>
+        <li>flex:[flex-grow] [flex-shrink] [flex-grow]</li>
+        <li>order:</li>
+        <li>align-self:</li>
+        <li>padding:</li>
+        <li>color/background-color/border</li>
+    </ol>
+</body>
+</html>
