@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-14</title>
+    <style>
+        /* Box Shadow */
+        .A101{
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            font-weight: bold;
+            height:200px;
+            width:200px;
+            border:1px solid rgb(4, 4, 4);
+            box-shadow:10px 10px red;
+        }
+        .A102{
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            font-weight: bold;
+            height:200px;
+            width:200px;
+            border:1px solid rgb(4, 4, 4);
+            box-shadow:10px 10px 15px red;
+        }
+        .A103{
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            font-weight: bold;
+            height:200px;
+            width:200px;
+            border:1px solid rgb(4, 4, 4);
+            box-shadow:10px 10px 15px 5px red;
+        }
+        .A104{
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            font-weight: bold;
+            height:200px;
+            width:200px;
+            border:1px solid rgb(4, 4, 4);
+            box-shadow:10px 10px 15px 5px red;
+        }
+        .A105{
+            background-color: aqua;
+            color:rgb(0, 0, 0);
+            font-weight: bold;
+            height:200px;
+            width:200px;
+            border:1px solid rgb(4, 4, 4);
+            border-radius:20px;
+            box-shadow: 10px 10px 15px 5px rgb(246, 255, 0), 
+                  inset 10px 10px 8px rgba(255, 46, 46, 0.8);
+            padding:30px 30px;
+        }
+        /* Offset-x */
+        .A{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: -20px 0 gray;
+        }
+        /* Offset-y */
+        .B{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: 0 20px  gray;
+        }
+        /* Blur-Radius */
+        .C{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: 10px 10px 20px gray;
+        }
+        /* Spread-Radius : 
+        + spread → expand shadow
+        - spread → shrink shadow */
+        .D{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: 0 0 10px 5px gray;
+        }
+        /* color */
+        .E{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: 10px 10px 20px #000000;
+        }
+        /* Inset */
+        .F{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow: inset 0 5px 10px gray;
+        }
+        /* Multiple Shadows */
+        .G{
+            background-color: bisque;
+            height:150px;
+            width:150px;
+            border:1px solid black;
+            box-shadow:
+            0 2px 10px rgba(134, 255, 4, 0.95),
+            0 8px 20px rgba(1, 213, 255, 0.974),
+            0 8px 30px rgba(255, 217, 1, 0.974);
+        }
+
+        /* TEXT SHADOW */
+        .A001{
+            font-size:30px;
+            text-shadow: 10px 0px 8px blue;
+        }
+        .A002{
+            font-size:30px;
+            text-shadow: 0px 10px 8px blue;
+        }
+        .A003{
+            font-size:30px;
+            text-shadow: 10px 10px 8px blue;
+        }
+        .A004{
+            font-size:30px;
+            text-shadow: 0px 0px 8px blue;
+        }
+
+        /* Drop-Shadow() */
+        img{
+            height:200px;
+            width:200px;
+            box-shadow: 5px 5px 10px rgb(252, 5, 5);
+            filter: drop-shadow(5px 5px 10px rgba(10, 132, 254, 0.998));
+        }
+    </style>
+</head>
+<body>
+    <!--box-shadow  → shadow around a box/element.
+    text-shadow → shadow behind text-->
+    <h1>BOX SHADOW</h1>
+    <p>
+        box-shadow: [offset-x] [offset-y] [blur-radius] [spread-radius] [color] [inset];
+    </p>
+    <h5>Offset-x : Controls horizontal position.</h5>
+    <h5>Offset-y : Controls vertical position.</h5>
+    <h5>Blur-radius(optional) : Controls sharpness.</h5>
+    <h5>spread-radius(optional) : Controls Size.</h5>
+    <h5>color(optional) : Sets the shadow tint</h5>
+    <h5>inset(optional) :  Switches shadow direction.</h5>
+    <div class="A101">
+        OFFSET-X/OFFSET-Y WITH COLOR
+    </div><br><hr><br>
+    <div class="A102">
+        OFFSET-X/OFFSET-Y/Blur-radius WITH COLOR
+    </div><br><hr><br>
+    <div class="A103">
+        OFFSET-X/OFFSET-Y/Blur-radius/Spread-radius WITH COLOR
+    </div><br><hr><br>
+    <div class="A104">
+        OFFSET-X/OFFSET-Y/Blur-radius/Spread-radius/COLOR
+    </div><br><hr><br>
+    <div class="A105">
+        OFFSET-X/OFFSET-Y/Blur-radius/Spread-radius/COLOR/Inset
+    </div><br><hr><br>
+    <div class="A">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="B">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="C">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="D">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="E">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="F">BOX SHADOW</div>
+    <br><hr><br>
+    <div class="G">MULTIPLE SHADOWS</div>
+    <pre>
+        ==> Different Shadow Directions
+        Bottom shadow
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        Right-bottom shadow
+        box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+        Left-top shadow
+        box-shadow: -5px -5px 10px rgba(0, 0, 0, 0.2);
+        Around all sides
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        Because:
+        X = 0
+        Y = 0
+        there is no directional movement.
+
+        ==> Common Professional Shadows
+        Small card
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+        Medium card
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        Large floating card
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        Button
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    </pre>
+    
+    <h1>TEXT SHADOWS :</h1>
+    <p>text-shadow: offset-x offset-y blur-radius color;</p>
+    <p class="A001">WELCOME TO CODING WORLD</p><br><hr><br>
+    <p class="A002">WELCOME TO CODING WORLD</p><br><hr><br>
+    <p class="A003">WELCOME TO CODING WORLD</p><br><hr><br>
+    <p class="A004">WELCOME TO CODING WORLD</p><br><hr><br>
+
+    <h1>FILTER : DROP-SHADOW()</h1>
+    <p>filter: drop-shadow(offset-x offset-y blur-radius color);</p>
+    <p>Box-Shadow : Creates a shadow based on the box/rectangle.<br>
+    Drop-Shadow : Creates a shadow based on the visible shape/transparency of the element.</p>
+    <img src="sample_code_image.png">
+</body>
+</html>

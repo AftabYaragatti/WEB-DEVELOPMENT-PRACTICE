@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-13</title>
+    <style>
+        /* Grid & Grid-Template-Columns Property */
+        /* 100px → Column 1 width
+        200px → Column 2 width
+        100px → Column 3 width
+        200px → Column 4 width */
+        .mainA{
+            display:grid;
+            grid-template-columns: 100px 200px 100px 1fr; /*Defines number & width column for 4boxes*/
+        }
+        .boxA{
+            background-color: crimson;
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Grid-Template-rows property */
+        .mainB{
+            display:grid;
+            grid-template-rows: 100px 200px 100px 1fr; /*Defines number & height row for 4boxes*/
+        }
+        .boxB{
+            background-color: rgb(20, 103, 220);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Grid-Template-rows & Columns property Both together*/
+        .mainC{
+            display:grid;
+            grid-template-columns: 100px 200px 100px 1fr; /*Defines number & width column for 4boxes */
+            grid-template-rows: 100px 100px 100px 100px; /*Defines number & height row for 4boxes*/
+        }
+        .boxC{
+            background-color: rgb(220, 183, 20);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Grid-Template-rows & Columns property Both together*/
+        /* Example :    This is the structure of web layout
+             Column 1      Column 2
+           ┌────────────┬────────────┐
+    Row 1  │   header   │   header   │
+           ├────────────┼────────────┤
+    Row 2  │  sidebar   │    main    │
+           ├────────────┼────────────┤
+    Row 3  │   footer   │   footer   │
+           └────────────┴────────────┘ */
+        .container {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            grid-template-rows: 80px 1fr 60px;
+            grid-template-areas:
+                "header header"
+                "sidebar main"
+                "footer footer";
+        }
+        header {
+            grid-area: header;
+            background-color: rgb(27, 220, 20);
+            border:2px solid black;
+            text-align: center;
+        }
+        aside {
+            grid-area: sidebar;
+            background-color: rgb(107, 20, 220);
+            border:2px solid black;
+            text-align: center;
+        }
+        main {
+            grid-area: main;
+            background-color: rgb(20, 123, 220);
+            border:2px solid black;
+            text-align: center;
+        }
+        footer {
+            grid-area: footer;
+            background-color: rgb(222, 51, 100);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* fr(Fraction Unit)=Represents a fraction of the leftover space in the grid container*/
+        /* Grid-template-columns/rows with repeat(count,size) function */
+        .mainD{
+            display:grid;
+            /* grid-template-columns: 100px 200px 100px 1fr; Defines number & width column for 4boxes */
+            /*grid-template-rows: 100px 100px 100px 100px; Defines number & height row for 4boxes*/
+            /* Instead of writing this like above write it as repeat(count,size) function */
+            grid-template-columns:repeat(4,150px);
+            grid-template-rows:repeat(4,100px);
+        }
+        .boxD{
+            background-color: rgb(20, 170, 220);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Grid-template-columns/rows with minmax(min,max):defines the min and max size function */
+        .mainE{
+            display:grid;
+            grid-template-columns:repeat(4, minmax(150px, 1fr));
+            grid-template-rows:repeat(4, minmax(150px, 1fr));
+            /* 1fr : If there is extra space, the column can grow and share that space. */
+        }
+        .boxE{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* grid-auto-flow:row/column/dense property */
+        .mainF1{
+            display:grid;
+            grid-template-columns:repeat(3, 2fr);
+            grid-template-rows:repeat(2,100px);
+            grid-auto-flow:row;
+            row-gap:7px;
+            column-gap: 10px; /* or we can use only gap:10px; property*/
+        }
+        .boxF1{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        .mainF2{
+            display:grid;
+            grid-template-columns:repeat(2, 2fr);
+            grid-template-rows:repeat(3,100px);
+            grid-auto-flow:column;
+            row-gap:7px;
+            column-gap: 10px; /* or we can use only gap:10px; property*/
+        }
+        .boxF2{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        .mainF3{
+            display:grid;
+            grid-template-columns:repeat(3, 2fr);
+            grid-template-rows:repeat(2,100px);
+            grid-auto-flow:dense;
+            row-gap:7px;
+            column-gap: 10px; /* or we can use only gap:10px; property*/
+        }
+        .boxF3{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* grid-auto-columns property */
+        .mainG1{
+            display:grid;
+            /* grid-template-columns:repeat(3, 200px); These are explicit columns. grid-auto-columns doesn't change them.*/
+            grid-template-rows: repeat(3, 100px);
+            grid-auto-flow: column;
+            grid-auto-columns: minmax(150px, 1fr);
+            gap:10px;
+        }
+        .boxG1{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* grid-auto-rows property */
+        .mainG2{
+            display:grid;
+            /* grid-template-columns:repeat(3, 200px); These are explicit columns. grid-auto-columns doesn't change them.*/
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-flow: row;
+            grid-auto-rows: minmax(150px, 1fr);
+            gap:10px;
+        }
+        .boxG2{
+            background-color: rgb(220, 20, 103);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Justify-items : center/start/end/stretch */
+        .mainH1{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: stretch;
+            background-color: bisque;
+        }
+        .mainH2{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: start;
+            background-color: bisque;
+        }
+        .mainH3{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: end;
+            background-color: bisque;
+        }
+        .mainH4{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: center;
+            background-color: bisque;
+        }
+        .boxH1{
+            background-color: rgb(20, 203, 220);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* align-items : center/start/end/stretch */
+        .mainI1{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: stretch;
+            align-items:stretch;
+            background-color: bisque;
+        }
+        .mainI2{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: stretch;
+            align-items:start;
+            background-color: bisque;
+        }
+        .mainI3{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: stretch;
+            align-items:end;
+            background-color: bisque;
+        }
+        .mainI4{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            justify-items: stretch;
+            align-items:center;
+            background-color: bisque;
+        }
+        .boxI1{
+            background-color: rgb(63, 220, 20);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Place-Items : [justify-items] [align-items] */
+        .mainJ1{
+            display:grid;
+            grid-template-columns:repeat(3, 1fr);
+            grid-template-rows:repeat(2,100px);
+            gap:10px;
+            place-items:stretch start;
+        }
+        .boxJ1{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Justify-Content  */
+        .mainA101{
+            display:grid;
+            grid-template-columns:100px 50px 50px 50px 50px 100px;
+            gap:10px;
+            place-items:center center;
+            justify-content: center;
+            background-color: aquamarine;
+            height: 50px;
+        }
+        .boxA101{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        .mainA102{
+            display:grid;
+            grid-template-columns:100px 50px 50px 50px 50px 100px;
+            gap:10px;
+            place-items:center center;
+            justify-content: space-between;
+            background-color: aquamarine;
+            height: 50px;
+        }
+        .boxA102{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Align-Content  */
+        .mainA103{
+            display:grid;
+            grid-template-columns:100px 50px 50px 50px 50px 100px;
+            gap:10px;
+            place-items:center center;
+            justify-content: center;
+            background-color: aquamarine;
+            height: 50px;
+            align-content:center;
+        }
+        .boxA103{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+        .mainA104{
+            display:grid;
+            grid-template-columns:100px 50px 50px 50px 50px 100px;
+            gap:10px;
+            place-items:center center;
+            justify-content: center;
+            background-color: aquamarine;
+            height: 50px;
+            align-content:space-between;
+        }
+        .boxA104{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+
+        /* Align-Content  */
+        .mainA105{
+            display:grid;
+            grid-template-columns:100px 50px 50px 50px 50px 100px;
+            gap:10px;
+            place-items:center center;
+            place-content: center space-between;
+            background-color: aquamarine;
+            height: 50px;
+        }
+        .boxA105{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+            text-align: center;
+        }
+
+
+        /* CHILD CONTAINER PROPERTY */
+        .container1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .item {
+            background: lightblue;
+            border: 1px solid black;
+            text-align: center;
+            padding: 40px;
+        }
+        /* Grid-column-start : Which vertical grid line should I start from? But grid-column-start alone does not necessarily tell it how many columns to occupy.*/
+
+        /* Grid-Column-Start */
+        .containerA1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemA1 {
+            grid-column-start: 2;
+        }
+
+        /* Grid-Column-End */
+        .containerB1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemB1 {
+            grid-column-start:1;
+            grid-column-end: 3; /*3-1=2 occupy*/
+        }
+
+        /* Grid-Row-Start */
+        .containerC1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemC1 {
+            grid-row-start:3;
+        }
+
+        /* Grid-Row-End */
+        .containerD1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemD1 {
+            grid-row-start:1;
+            grid-row-end: 3; /*3-1=2 occupy*/
+        }
+
+        /* Grid-Column:start/end */
+        .containerE1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemE1 {
+            grid-column:1/3;
+        }
+
+        /* Grid-Column:start/end */
+        .containerF1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemF1 {
+            grid-row:1/3;
+        }
+
+        /* Grid-Area:row-start/col-start/row-end/col-end */
+        .containerG1 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 10px;
+        }
+        .itemG1 {
+            grid-area:1/1/3/3;
+        }
+
+        /* NOTE : align-items → controls ALL items
+        align-self  → controls ONE item */
+        .mainB101{
+            display:grid;
+            grid-template-columns:repeat(3,1fr);
+            gap:10px;
+            background-color: aquamarine;
+            height: 200px;
+        }
+        .boxB101{
+            background-color: rgb(220, 20, 200);
+            border:2px solid black;
+        } 
+        .boxBBB{
+            justify-self: start;
+        }
+        .boxCCC{
+            justify-self: center;
+            align-self:start;
+        }
+        .boxDDD{
+            place-self:center start;
+        }
+    </style>
+</head>
+<body>
+    <h1>GRID LAYOUT PROPERTY : PARENT CONTAINER</h1>
+    <h4>Display Grid & Grid-Template-columns Property</h4>
+    <div class="mainA">
+        <div class="boxA">BOX 1</div>
+        <div class="boxA">BOX 2</div>
+        <div class="boxA">BOX 3</div>
+        <div class="boxA">BOX 4</div>
+    </div>
+
+    <h4>Grid-Template-rows Property</h4>
+    <div class="mainB">
+        <div class="boxB">BOX 1</div>
+        <div class="boxB">BOX 2</div>
+        <div class="boxB">BOX 3</div>
+        <div class="boxB">BOX 4</div>
+    </div>
+
+    <h4>Grid-Template-rows/columns Property Both together</h4>
+    <div class="mainC">
+        <div class="boxC">BOX 1</div>
+        <div class="boxC">BOX 2</div>
+        <div class="boxC">BOX 3</div>
+        <div class="boxC">BOX 4</div>
+    </div>
+
+    <h4>Grid-Template-area Property</h4>
+    <div class="container">
+        <header>Header : Website Name</header>
+        <aside>Sidebar : Lorem ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit maxime consequuntur ex distinctio vel officia beatae magnam totam. Consectetur quis officiis quas? Totam doloribus, incidunt corrupti perspiciatis harum vitae earum.</aside>
+        <main>Main Content : Lorem ipsum dolor sit amet consectetur adipisicing elit. Non illo distinctio nobis cupiditate adipisci amet dolorum, laboriosam, autem quos et eos iste ullam voluptates cum! Natus soluta ipsa quasi nostrum.</main>
+        <footer>Footer : Contact Details and other link</footer>
+    </div>
+
+    <h4>Grid-Template-rows/columns Property with repeat(count,size) function</h4>
+    <!-- repeat() function it is used to create a classic 12-columns grid systems -->
+    <div class="mainD">
+        <div class="boxD">BOX 1</div>
+        <div class="boxD">BOX 2</div>
+        <div class="boxD">BOX 3</div>
+        <div class="boxD">BOX 4</div>
+    </div>
+
+    <h4>Grid-Template-rows/columns Property with minmax(min,max) function</h4>
+    <div class="mainE">
+        <div class="boxE">BOX 1</div>
+        <div class="boxE">BOX 2</div>
+        <div class="boxE">BOX 3</div>
+        <div class="boxE">BOX 4</div>
+    </div>
+
+    <h4>Grid-auto-flow : row property</h4>
+    <div class="mainF1">
+        <div class="boxF1">BOX 1</div>
+        <div class="boxF1">BOX 2</div>
+        <div class="boxF1">BOX 3</div>
+        <div class="boxF1">BOX 4</div>
+        <div class="boxF1">BOX 5</div>
+        <div class="boxF1">BOX 6</div>
+    </div>
+
+    <h4>Grid-auto-flow : column property</h4>
+    <div class="mainF2">
+        <div class="boxF2">BOX 1</div>
+        <div class="boxF2">BOX 2</div>
+        <div class="boxF2">BOX 3</div>
+        <div class="boxF2">BOX 4</div>
+        <div class="boxF2">BOX 5</div>
+        <div class="boxF2">BOX 6</div>
+    </div>
+
+    <h4>Grid-auto-flow : dense property</h4>
+    <div class="mainF3">
+        <div class="boxF3">BOX 1</div>
+        <div class="boxF3">BOX 2</div>
+        <div class="boxF3">BOX 3</div>
+        <div class="boxF3">BOX 4</div>
+        <div class="boxF3">BOX 5</div>
+        <div class="boxF3">BOX 6</div>
+    </div>
+
+    <h4>Grid-auto-rows :minmax()/repeat()/Normal property</h4>
+    <div class="mainG1">
+        <div class="boxG1">BOX 1</div>
+        <div class="boxG1">BOX 2</div>
+        <div class="boxG1">BOX 3</div>
+        <div class="boxG1">BOX 4</div>
+        <div class="boxG1">BOX 5</div>
+        <div class="boxG1">BOX 6</div>
+    </div>
+
+    <h4>Grid-auto-columns :minmax()/repeat()/Normal property</h4>
+    <div class="mainG2">
+        <div class="boxG2">BOX 1</div>
+        <div class="boxG2">BOX 2</div>
+        <div class="boxG2">BOX 3</div>
+        <div class="boxG2">BOX 4</div>
+        <div class="boxG2">BOX 5</div>
+        <div class="boxG2">BOX 6</div>
+    </div>
+
+    <p>Note : Explicit Changing in grid means grid-template-rows/columns: where explicitly we are making changes.<br>Implicit Changing we can do by using grid-auto-rows/columns/flows</p>
+
+    <h2>Alignment Properties</h2>
+    <h3>For the Parent Container : Aligning all child items inside their cells</h3>
+    <h4>Justify-items:stretch/start/end/center (Position the items horizontal)</h4>
+    <h4>Justify-items:stretch</h4>
+    <div class="mainH1">
+        <div class="boxH1">BOX 1</div>
+        <div class="boxH1">BOX 2</div>
+        <div class="boxH1">BOX 3</div>
+        <div class="boxH1">BOX 4</div>
+        <div class="boxH1">BOX 5</div>
+        <div class="boxH1">BOX 6</div>
+    </div>
+    <h4>Justify-items:start</h4>
+    <div class="mainH2">
+        <div class="boxH1">BOX 1</div>
+        <div class="boxH1">BOX 2</div>
+        <div class="boxH1">BOX 3</div>
+        <div class="boxH1">BOX 4</div>
+        <div class="boxH1">BOX 5</div>
+        <div class="boxH1">BOX 6</div>
+    </div>
+    <h4>Justify-items:end</h4>
+    <div class="mainH3">
+        <div class="boxH1">BOX 1</div>
+        <div class="boxH1">BOX 2</div>
+        <div class="boxH1">BOX 3</div>
+        <div class="boxH1">BOX 4</div>
+        <div class="boxH1">BOX 5</div>
+        <div class="boxH1">BOX 6</div>
+    </div>
+    <h4>Justify-items:center</h4>
+    <div class="mainH4">
+        <div class="boxH1">BOX 1</div>
+        <div class="boxH1">BOX 2</div>
+        <div class="boxH1">BOX 3</div>
+        <div class="boxH1">BOX 4</div>
+        <div class="boxH1">BOX 5</div>
+        <div class="boxH1">BOX 6</div>
+    </div>
+
+    <h4>align-items:stretch/start/end/center (Position the items vertically)</h4>
+    <h4>align-items:stretch</h4>
+    <div class="mainI1">
+        <div class="boxI1">BOX 1</div>
+        <div class="boxI1">BOX 2</div>
+        <div class="boxI1">BOX 3</div>
+        <div class="boxI1">BOX 4</div>
+        <div class="boxI1">BOX 5</div>
+        <div class="boxI1">BOX 6</div>
+    </div>
+    <h4>align-items:start</h4>
+    <div class="mainI2">
+        <div class="boxI1">BOX 1</div>
+        <div class="boxI1">BOX 2</div>
+        <div class="boxI1">BOX 3</div>
+        <div class="boxI1">BOX 4</div>
+        <div class="boxI1">BOX 5</div>
+        <div class="boxI1">BOX 6</div>
+    </div>
+    <h4>align-items:end</h4>
+    <div class="mainI3">
+        <div class="boxI1">BOX 1</div>
+        <div class="boxI1">BOX 2</div>
+        <div class="boxI1">BOX 3</div>
+        <div class="boxI1">BOX 4</div>
+        <div class="boxI1">BOX 5</div>
+        <div class="boxI1">BOX 6</div>
+    </div>
+    <h4>align-items:center</h4>
+    <div class="mainI4">
+        <div class="boxI1">BOX 1</div>
+        <div class="boxI1">BOX 2</div>
+        <div class="boxI1">BOX 3</div>
+        <div class="boxI1">BOX 4</div>
+        <div class="boxI1">BOX 5</div>
+        <div class="boxI1">BOX 6</div>
+    </div>
+
+    <h4>place-items:shorthand property combination of [justify-items] [align-items] stretch/start/end/center</h4>
+    <div class="mainJ1">
+        <div class="boxJ1">BOX 1</div>
+        <div class="boxJ1">BOX 2</div>
+        <div class="boxJ1">BOX 3</div>
+        <div class="boxJ1">BOX 4</div>
+        <div class="boxJ1">BOX 5</div>
+        <div class="boxJ1">BOX 6</div>
+    </div>
+
+    <h4>Justify-Content : center</h4>
+    <div class="mainA101">
+        <div class="boxA101">BOX 1</div>
+        <div class="boxA101">BOX 2</div>
+        <div class="boxA101">BOX 3</div>
+        <div class="boxA101">BOX 4</div>
+        <div class="boxA101">BOX 5</div>
+        <div class="boxA101">BOX 6</div>
+    </div>
+    <h4>Justify-Content : space-between</h4>
+    <div class="mainA102">
+        <div class="boxA102">BOX 1</div>
+        <div class="boxA102">BOX 2</div>
+        <div class="boxA102">BOX 3</div>
+        <div class="boxA102">BOX 4</div>
+        <div class="boxA102">BOX 5</div>
+        <div class="boxA102">BOX 6</div>
+    </div>
+
+    <h4>Align-Content : center</h4>
+    <div class="mainA103">
+        <div class="boxA103">BOX 1</div>
+        <div class="boxA103">BOX 2</div>
+        <div class="boxA103">BOX 3</div>
+        <div class="boxA103">BOX 4</div>
+        <div class="boxA103">BOX 5</div>
+        <div class="boxA103">BOX 6</div>
+    </div>
+    <h4>Align-Content : space-between</h4>
+    <div class="mainA104">
+        <div class="boxA104">BOX 1</div>
+        <div class="boxA104">BOX 2</div>
+        <div class="boxA104">BOX 3</div>
+        <div class="boxA104">BOX 4</div>
+        <div class="boxA104">BOX 5</div>
+        <div class="boxA104">BOX 6</div>
+    </div>
+
+    <h4>Place-Content : [justify-content] [align-content]</h4>
+    <div class="mainA105">
+        <div class="boxA105">BOX 1</div>
+        <div class="boxA105">BOX 2</div>
+        <div class="boxA105">BOX 3</div>
+        <div class="boxA105">BOX 4</div>
+        <div class="boxA105">BOX 5</div>
+        <div class="boxA105">BOX 6</div>
+    </div>
+
+    <h1>GRID LAYOUT PROPERTY : CHILD CONTAINER</h1>
+    <h4>Normal For All Items</h4>
+    <div class="container1">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
+        <div class="item item6">6</div>
+        <div class="item item7">7</div>
+        <div class="item item8">8</div>
+        <div class="item item9">9</div>
+    </div>
+
+    <h4>Grid-Column-Start : 3</h4>
+    <div class="containerA1">
+        <div class="item itemA1">1</div>
+        <div class="item itemA2">2</div>
+        <div class="item itemA3">3</div>
+        <div class="item itemA4">4</div>
+        <div class="item itemA5">5</div>
+        <div class="item itemA6">6</div>
+        <div class="item itemA7">7</div>
+        <div class="item itemA8">8</div>
+        <div class="item itemA9">9</div>
+    </div>
+
+    <h4>Grid-Column-End : 3</h4>
+    <div class="containerB1">
+        <div class="item itemB1">1</div>
+        <div class="item itemB2">2</div>
+        <div class="item itemB3">3</div>
+        <div class="item itemB4">4</div>
+        <div class="item itemB5">5</div>
+        <div class="item itemB6">6</div>
+        <div class="item itemB7">7</div>
+        <div class="item itemB8">8</div>
+        <div class="item itemB9">9</div>
+    </div>
+    <p>NOTE : grid-column-start: 1 + grid-column-end: 3 = occupy 2 columns</p>
+
+    <h4>Grid-row-start : 1</h4>
+    <div class="containerC1">
+        <div class="item itemC1">1</div>
+        <div class="item itemC2">2</div>
+        <div class="item itemC3">3</div>
+        <div class="item itemC4">4</div>
+        <div class="item itemC5">5</div>
+        <div class="item itemC6">6</div>
+        <div class="item itemC7">7</div>
+        <div class="item itemC8">8</div>
+        <div class="item itemC9">9</div>
+    </div>
+
+    <h4>Grid-row-end : 3</h4>
+    <div class="containerD1">
+        <div class="item itemD1">1</div>
+        <div class="item itemD2">2</div>
+        <div class="item itemD3">3</div>
+        <div class="item itemD4">4</div>
+        <div class="item itemD5">5</div>
+        <div class="item itemD6">6</div>
+        <div class="item itemD7">7</div>
+        <div class="item itemD8">8</div>
+        <div class="item itemD9">9</div>
+    </div>
+
+    <h4>Grid-column : start/end</h4>
+    <div class="containerE1">
+        <div class="item itemE1">1</div>
+        <div class="item itemE2">2</div>
+        <div class="item itemE3">3</div>
+        <div class="item itemE4">4</div>
+        <div class="item itemE5">5</div>
+        <div class="item itemE6">6</div>
+        <div class="item itemE7">7</div>
+        <div class="item itemE8">8</div>
+        <div class="item itemE9">9</div>
+    </div>
+
+    <h4>Grid-row : start/end</h4>
+    <div class="containerF1">
+        <div class="item itemF1">1</div>
+        <div class="item itemF2">2</div>
+        <div class="item itemF3">3</div>
+        <div class="item itemF4">4</div>
+        <div class="item itemF5">5</div>
+        <div class="item itemF6">6</div>
+        <div class="item itemF7">7</div>
+        <div class="item itemF8">8</div>
+        <div class="item itemF9">9</div>
+    </div>
+
+    <h4>Grid-area : [row-start]/[col-start]/[row-end]/[col-end]</h4>
+    <div class="containerG1">
+        <div class="item itemG1">1</div>
+        <div class="item itemG2">2</div>
+        <div class="item itemG3">3</div>
+        <div class="item itemG4">4</div>
+        <div class="item itemG5">5</div>
+        <div class="item itemG6">6</div>
+        <div class="item itemG7">7</div>
+        <div class="item itemG8">8</div>
+        <div class="item itemG9">9</div>
+    </div>
+
+    <h4>Justify-self/Align-Self/Place-Self:[justify-self] [align-self]</h4>
+    <div class="mainB101">
+        <div class="boxB101 boxBBB">BOX 1</div>
+        <div class="boxB101 boxCCC">BOX 2</div>
+        <div class="boxB101 boxDDD">BOX 3</div>
+        <div class="boxB101">BOX 4</div>
+        <div class="boxB101">BOX 5</div>
+        <div class="boxB101">BOX 6</div>
+    </div>
+
+    <h1>NOTE : PARENT CONTAINER</h1>
+    <ol>
+        <li>display:grid</li>
+        <li>grid-template-columns:</li>
+        <li>grid-template-rows:</li>
+        <li>grid-template-areas:</li>
+        <li>grid-template-columns:with repeat(counts,size)</li>
+        <li>grid-template-rows:with minmax(min,max)</li>
+        <li>grid-auto-flow:row/column/dense</li>
+        <li>grid-auto-columns:</li>
+        <li>grid-auto-rows:</li>
+        <li>column-gap:</li>
+        <li>row-gap:</li>
+        <li>gap:</li>
+        <li>justify-items:center/start/end/stretch</li>
+        <li>align-items:center/start/end/stretch</li>
+        <li>place-items:[justify-items] [align-items]</li>
+        <li>justify-content:space-between,center</li>
+        <li>align-content:space-between,center</li>
+        <li>place-content:[justify-content] [align-content]</li>
+    </ol>
+    <h1>NOTE : CHILD CONTAINER</h1>
+    <ol>
+        <li>grid-column-start</li>
+        <li>grid-column-end</li>
+        <li>grid-row-start</li>
+        <li>grid-row-end</li>
+        <li>grid-column:start/end</li>
+        <li>grid-row:start/end</li>
+        <li>grid-area:row-start/col-start/row-end/col-end</li>
+        <li>justify-self</li>
+        <li>align-self:</li>
+        <li>space-self:</li>
+    </ol>
+</body>
+</html>
