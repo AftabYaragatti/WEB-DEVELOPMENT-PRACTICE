@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-15</title>
+    <style>
+        .A img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: fill;
+        }
+        .B img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: contain;
+        }
+        .C img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: cover;
+        }
+        .D img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: none;
+        }
+        .E img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+        }
+
+        /* Object-Position */
+        .A101 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center;
+        }
+        .A102 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: top;
+        }
+        .A103 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: bottom;
+        }
+        .A104 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position:left;
+        }
+        .A105 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: right;
+        }
+        .A106 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center top;
+        }
+        .A107 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center bottom;
+        }
+        .A108 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center center;
+        }
+        .A109 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center left;
+        }
+        .A110 img{
+            width:200px;
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center right;
+            object-position: 30% 80%;
+        }
+        /*Note : Using Percentages :
+        object-position: 25% 50%; OR 
+        object-position: 20px 10px;*/
+
+        /* Aspect-ratio : Instead of Height and Width we can use this property*/
+        .B101 img{
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center;
+            aspect-ratio:16/9;
+        }
+        .B102 img{
+            height:200px;
+            border:2px solid black;
+            box-shadow: 0px 0px 10px red;
+            border-radius: 20px;
+            object-fit: scale-down;
+            object-position: center;
+            aspect-ratio:3/4;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image & Object Property</h1>
+    <div class="A">
+        <b>Object-fit:fill</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-fit controls how an image or video fits inside its assigned width and height. Values = fill/contain/cover/none/scale-down</p>
+    </div>
+    <div class="B">
+        <b>Object-fit:contain</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-fit controls how an image or video fits inside its assigned width and height. Values = fill/contain/cover/none/scale-down</p>
+    </div>
+    <div class="C">
+        <b>Object-fit:Cover</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-fit controls how an image or video fits inside its assigned width and height. Values = fill/contain/cover/none/scale-down</p>
+    </div>
+    <div class="D">
+        <b>Object-fit:none</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-fit controls how an image or video fits inside its assigned width and height. Values = fill/contain/cover/none/scale-down</p>
+    </div>
+    <div class="E">
+        <b>Object-fit:scale-down</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-fit controls how an image or video fits inside its assigned width and height. Values = fill/contain/cover/none/scale-down</p>
+    </div>
+
+    <!-- Object Position -->
+    <div class="A101">
+        <b>Object-position:center</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A102">
+        <b>Object-position:top</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A103">
+        <b>Object-position:bottom</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A104">
+        <b>Object-position:left</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A105">
+        <b>Object-position:right</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A106">
+        <b>Object-position:center top</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A107">
+        <b>Object-position:center bottom</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A108">
+        <b>Object-position:center center</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A109">
+        <b>Object-position:center left</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+    <div class="A110">
+        <b>Object-position:center right</b> <br>
+        <img src="sample_image2.jpg">
+        <p>object-position: horizontal vertical;</p>
+    </div>
+
+    <!-- ASPECT RATIO -->
+    <div class="B101">
+        <b>aspect-ratio:16/9</b> <br>
+        <img src="sample_image2.jpg">
+        <p>This creates a consistent 16:9 image area.Instead of manually writing: height: 200px;</p>
+    </div>
+    <div class="B102">
+        <b>aspect-ratio:4/3</b> <br>
+        <img src="sample_image2.jpg">
+        <p>This creates a consistent 4:3 image area.Instead of manually writing: height: 200px;</p>
+    </div>
+</body>
+</html>
