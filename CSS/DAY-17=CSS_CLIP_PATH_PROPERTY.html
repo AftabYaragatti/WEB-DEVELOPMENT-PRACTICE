@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-17</title>
+    <style>
+        /* CLIP PATH PROPERTY */
+        .A101{
+            height:300px;
+            width:auto;
+            clip-path:circle(50%);
+        }
+        .A102{
+            height:300px;
+            width:auto;
+            clip-path:circle(30%);
+        }
+        .A103{
+            height:300px;
+            width:auto;
+            clip-path:circle(40% at 40% 50%);
+        }
+        .A104{
+            height:300px;
+            width:auto;
+            clip-path:ellipse(40% 20%);
+        }
+        .A105{
+            height:300px;
+            width:auto;
+            clip-path:ellipse(60% 40% at 40% 70%);
+            border:2px solid black;
+        }
+        .A106{
+            height:300px;
+            width:auto;
+            clip-path:inset(20px);
+        }
+        .A107{
+            height:300px;
+            width:auto;
+            clip-path:inset(20px 30px 40px 50px);
+        }
+        .A108{
+            height:300px;
+            width:auto;
+            clip-path:inset(20px round 30px);
+        }
+        .A109{
+            height:300px;
+            width:auto;
+            clip-path:polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);
+        }
+        .A110{
+            height:300px;
+            width:auto;
+            clip-path:polygon(50% 0,100% 100%, 0 100%);
+        }
+        .A111{
+            height:300px;
+            width:auto;
+            clip-path:polygon(50% 0,100% 50%, 50% 100%,0 50%);
+        }
+        .A112{
+            width: 300px;
+            height: 200px;
+            background: royalblue;
+            clip-path: path("M 0,0 L 300,0 L 300,150 Q 150,230 0,150 Z");
+        }
+    </style>
+</head>
+<body>
+    <h1>CLIP PATH PROPERTY</h1>
+    <p>clip-path controls which part of an element is visible. Think: "Cut my element into this shape."</p>
+
+    <h3>Clip-Path:Circle(50%) = Create a circular visible area.Only the circular portion is visible.</h3>
+    <img class="A101" src="sample_image2.jpg">
+
+    <h3>Clip-Path:Circle(50%) = 40% Smaller circle. / 60% Lager Circle</h3>
+    <img class="A102" src="sample_image2.jpg">
+
+    <h3>Clip-Path:Circle(circle size at horizontal position vertical position) = Move the circle. We can specify the circle's position.</h3>
+    <img class="A103" src="sample_image2.jpg">
+
+    <h3>Clip-Path:ellipse(horizontal radius vertical radius)</h3>
+    <img class="A104" src="sample_image2.jpg">
+
+    <h3>Clip-Path:ellipse(horizontal radius vertical radius at X-coordinate y-coordinate) = The code behaves exactly like clip-path: ellipse(50% 40% at 50% 50%)</h3>
+    <img class="A105" src="sample_image2.jpg">
+
+    <h3>Clip-Path:inset(20px) = 20px from top/20px from right/20px from bottom/20px from left</h3>
+    <img class="A106" src="sample_image2.jpg">
+
+    <h3>clip-path: inset(20px 30px 40px 50px) = top right bottom left</h3>
+    <img class="A107" src="sample_image2.jpg">
+
+    <h3>clip-path: inset(20px round 30px) = Rounded inset(), We can also create rounded corners</h3>
+    <img class="A108" src="sample_image2.jpg">
+
+    <h3>clip-path: polygon((top-right),(upper-right bottom),(bottom tip),(upper-left bottom)) = Example clip-path: polygon(0 0,100% 0,100% 80%,50% 100%,0 80%);</h3>
+    <img class="A109" src="sample_image2.jpg">
+
+    <h3>clip-path: polygon() = Triangle using polygon() = clip-path: polygon(50% 0,100% 100%,0 100%);</h3>
+    <img class="A110" src="sample_image2.jpg">
+
+    <h3>clip-path: polygon() = Diamond - clip-path: polygon(50% 0,100% 50%,50% 100%,0 50%);</h3>
+    <img class="A111" src="sample_image2.jpg">
+
+    <h3>clip-path: path() = We can also use an SVG-style path:</h3>
+    <img class="A112" src="sample_image2.jpg">
+</body>
+</html>
