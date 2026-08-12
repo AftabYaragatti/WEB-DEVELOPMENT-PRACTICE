@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-18</title>
+    <style>
+            /* TOP
+        ┌──────────────────────┐
+        │      IMAGE           │ ← visible
+        │      IMAGE           │
+        │      IMAGE           │
+        │      ▓▓▓▓▓▓          │ ← fading
+        │       ░░░░           │
+        │         ░            │ ← disappears
+        └──────────────────────┘
+        BOTTOM */
+        
+        /* MASK IMAGE WITH LINEAR GRADIENT */
+        .A{
+            width:300px;
+            height:300px;
+            border:2px solid black;
+        }
+        .A101{
+            width:300px;
+            height:300px;
+            mask-image:linear-gradient(transparent,black);
+            border:2px solid black;
+        }
+        .A102{
+            width:300px;
+            height:300px;
+            mask-image:linear-gradient(black,transparent);
+            border:2px solid black;
+        }
+        .A103{
+            width:300px;
+            height:300px;
+            mask-image:linear-gradient(to left,black,transparent);
+            border:2px solid black;
+        }
+        .A104{
+            width:300px;
+            height:300px;
+            mask-image:linear-gradient(to right,black,transparent);
+            border:2px solid black;
+        }
+        .A105{
+            width:300px;
+            height:300px;
+            mask-image:linear-gradient(to left,black 30%,transparent 90%);
+            border:2px solid black;
+        }
+        .A106{
+            width:300px;
+            height:300px;
+            mask-image:radial-gradient(circle,black, transparent);
+            border:2px solid black;
+        }
+        .A107{
+            width:300px;
+            height:300px;
+            mask-image:radial-gradient(ellipse,black,transparent);
+            border:2px solid black;
+        }
+
+        /* MASK IMAGE WITH URL HEART PNG */
+        .A108{
+            width:300px;
+            height:300px;
+            border:2px solid black;
+            mask-size:300px 300px;
+            -webkit-mask-image: url(
+                "https://mdn.github.io/shared-assets/images/examples/colorful-heart.png"
+            );
+            mask-image: url(
+                "https://mdn.github.io/shared-assets/images/examples/colorful-heart.png"
+            );
+        }
+        .A109{
+            width:300px;
+            height:300px;
+            border:2px solid black;
+            mask-size:300px 300px;
+            mask-image: url("https://mdn.github.io/css-examples/masking/star.svg");
+            -webkit-mask-image: url("https://mdn.github.io/css-examples/masking/star.svg");
+        }
+        /* MASK SIZE */
+        .B101{
+            width:300px;
+            height:300px;
+            mask-image:radial-gradient(ellipse,black,transparent);
+            border:2px solid black;
+            mask-size:10px 10px;
+        }
+        .B102{
+            width:300px;
+            height:300px;
+            mask-image:radial-gradient(ellipse,black,transparent);
+            border:2px solid black;
+            mask-size:100px 100px;
+        }
+        .B103{
+            width:300px;
+            height:300px;
+            mask-image:radial-gradient(ellipse,black,transparent);
+            border:2px solid black;
+            mask-size:300px 300px;
+        }
+
+        /* MASK POSITION AND REPEAT */
+        .C101{
+            width:300px;
+            height:300px;
+            border:2px solid black;
+            -webkit-mask-image: url(
+                "https://mdn.github.io/shared-assets/images/examples/colorful-heart.png"
+            );
+            mask-image: url(
+                "https://mdn.github.io/shared-assets/images/examples/colorful-heart.png"
+            );
+
+            /* MASK SIZE */
+            mask-size: 250px 250px;
+            -webkit-mask-size: 250px 250px;
+
+
+            /* MASK REPEAT */
+            mask-repeat: no-repeat;
+            -webkit-mask-repeat: repeat;
+
+
+            /* MASK POSITION */
+            mask-position: center;
+            -webkit-mask-position: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>MASK IMAGE PROPERTY</h1>
+
+    <h3>Mask Image Fade</h3>
+    <p>mask-image is used to hide, reveal, or fade parts of an element using an image or gradient(linear/radial).</p>
+    <h3>NORMAL IMAGE</h3>
+    <img class="A" src="sample_image2.jpg">
+
+    <div>
+        <h3>mask-image with an linear gradient : top-transparent</h3>
+        <img class="A101" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an linear gradient : bottom-transparent</h3>
+        <img class="A102" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an linear gradient : to left-transparent</h3>
+        <img class="A103" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an linear gradient : to right-transparent</h3>
+        <img class="A104" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an linear gradient : to control direction brightness and transparent - Syntax : linear-gradient(direction,starting stop,ending stop)</h3>
+        <img class="A105" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an radial gradient : circle</h3>
+        <img class="A106" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an radial gradient : ellipse</h3>
+        <img class="A107" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an heart png image url</h3>
+        <img class="A108" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-image with an start png image url</h3>
+        <img class="A109" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-size with an size 10px 10px</h3>
+        <img class="B101" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-size with an size 100px 100px</h3>
+        <img class="B102" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-size with an size 300px 300px</h3>
+        <img class="B103" src="sample_image2.jpg">
+    </div>
+
+    <div>
+        <h3>mask-size / mask-position / mask-repeat</h3>
+        <img class="C101" src="sample_image2.jpg">
+    </div>
+
+    </body>
+</html>
