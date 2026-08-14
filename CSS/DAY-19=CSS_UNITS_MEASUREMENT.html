@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-19</title>
+    <style>
+        /* font-size : rem (best for screen accessibility) */
+        /* width / height :  %, vw, vh, or px */
+        /* padding / margin :  rem, em, or px */
+        /* border-width :  px (keeps borders crisp)*/
+
+
+        /* Absolute Units */
+        .A1{
+            color:blue;
+            font-size:20px;
+        }
+        .A2{
+            color:rgb(13, 255, 0);
+            font-size:20pt;
+        }
+        .A3{
+            color:rgb(255, 0, 251);
+            font-size:0.5cm;
+        }
+
+        /* Relative Units */
+        .B{
+            font-size:2em;
+        }
+        .B1{
+            color:rgb(13, 255, 0);
+            font-size:2rem;
+        }
+        .B2{
+            color:rgb(51, 0, 255);
+            font-size:1.5em;
+        }
+        .B3{
+            color:rgb(255, 0, 55);
+            font-size:2ch;
+        }
+
+        /* View-Port Relative Units */
+        .C{
+            font-size:10em;
+        }
+        .C1{
+            color:rgb(13, 255, 0);
+            font-size:4vw;
+        }
+        .C2{
+            color:rgb(51, 0, 255);
+            font-size:4vh;
+        }
+        .C3{
+            color:rgb(255, 226, 5);
+            font-size:4vmin;
+        }
+        .C4{
+            color:rgb(255, 0, 55);
+            font-size:4vmax;
+        }
+
+        /* Percentage */
+        .Parent{
+            color:cadetblue;
+            box-shadow: 100px;
+        }
+        .Child{
+            color:cadetblue;
+            font-size: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>UNITS MEASUREMENT</h1>
+    <ol>
+        <li>Absolute Units (Fixed Sizes) : Absolute units are always the exact same size. They do not change when a user resizes their browser window.
+            <ul>
+                <li>px(pixels)</li>
+                <li>pt(points)</li>
+                <li>cm / mm / in (Centimeters / Millimeters / Inches)</li>
+            </ul>
+        </li>
+        <li>Relative Units (Flexible & Responsive) : Relative units change their size based on something else, like the font size of the text or the size of the computer screen. These units are the secret to making modern, mobile-friendly websites.
+            <ul>
+                <li>rem(Root EM)</li>
+                <li>em(Element EM)</li>
+                <li>ch(Character)</li>
+            </ul>
+        </li>
+        <li>Viewport-Relative Units : The "viewport" is simply the browser window area where the website is visible. These units change instantly when you resize the window.
+            <ul>
+                <li>vw (Viewport Width)</li>
+                <li>vh (Viewport Height)</li>
+                <li>vmin (Viewport Minimum)</li>
+                <li>vmax (Viewport Maximum)</li>
+            </ul>
+        </li>
+        <li>Percentages% (Percentage): Sized relative to its parent container box. If a parent box is 500px wide, an internal box set to 50% will display at 250px wide.</li>
+    </ol>
+
+    <div>
+        <p class="A1">px (Pixels): The most common unit used for screens. One pixel represents a single tiny dot on your monitor.</p>
+        <p class="A2">pt (Points): A traditional unit used mostly for print styles and fonts.</p>
+        <p class="A3">cm / mm / in (Centimeters / Millimeters / Inches): Standard real-world physical measurements used almost exclusively for printing web pages onto physical paper.</p>
+    </div>
+    <div class="B">
+        <p class="B1">rem (Root EM): Sized relative to the root (<html>) text size. If the browser's default font size is 16px, then 1rem equals 16px. If you change the root size, everything scales beautifully.</p>
+        <p class="B2">em (Element EM): Sized relative to the text size of its immediate parent element.</p>
+        <p class="B3">ch (Character): Equal to the width of the number "0" (zero) in the chosen font. It is perfect for limiting how many characters fit on a single line of text.</p>
+    </div>
+    <div>
+        <p class="C1">vw (Viewport Width): A percentage of the browser window's full width. 10vw means exactly 10% of the screen width.
+        <p class="C2">vh (Viewport Height): A percentage of the browser window's full height. 100vh means the element will take up the entire height of the screen.</p>
+        <p class="C3">vmin (Viewport Minimum): Uses the smaller value between the screen's width or height.</p>
+        <p class="C4">vmax (Viewport Maximum): Uses the larger value between the screen's width or height.</p>
+    </div>
+    <div class="Parent">
+        <p class="Child">% (Percentage): Sized relative to its parent container box. If a parent box is 500px wide, an internal box set to 50% will display at 250px wide.</p>
+    </div>
+</body>
+</html>

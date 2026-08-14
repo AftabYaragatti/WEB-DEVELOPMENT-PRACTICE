@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-20</title>
+    <style>
+        /* Translate Property */
+        .A-101{
+            background-color: aquamarine;
+            height:250px;
+            width:400px;
+        }
+        .A101{
+            transform:translate(160px,10px);
+            background-color: cadetblue;
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* TranslateX Property */
+        .A-102{
+            background-color: aquamarine;
+            height:250px;
+            width:400px;
+        }
+        .A102{
+            transform:translateX(160px);
+            background-color: cadetblue;
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* TranslateY Property */
+        .A-103{
+            background-color: aquamarine;
+            height:250px;
+            width:400px;
+        }
+        .A103{
+            transform:translateY(-70px);
+            background-color: cadetblue;
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* TranslateZ Property */
+        .A-104{
+            background-color: aquamarine;
+            height:250px;
+            width:400px;
+        }
+        .A104{
+            transform:translateZ(100px);
+            background-color: cadetblue;
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Scale Property */
+        .B-101{
+            background-color: rgb(127, 127, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .B101{
+            transform:scale(1.5);
+            background-color: rgb(234, 255, 71);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* ScaleX Property */
+        .B-102{
+            background-color: rgb(127, 127, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .B102{
+            transform:scaleX(2);
+            background-color: rgb(234, 255, 71);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* ScaleY Property */
+        .B-103{
+            background-color: rgb(127, 127, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .B103{
+            transform:scaleY(2);
+            background-color: rgb(234, 255, 71);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Scale(X,Y) Property */
+        .B-104{
+            background-color: rgb(127, 127, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .B104{
+            transform:scale(2,1);
+            background-color: rgb(234, 255, 71);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Rotate(deg) Property */
+        .C-101{
+            background-color: rgb(255, 172, 127);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .C101{
+            transform:rotate(45deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* RotateX(deg) Property */
+        .C-102{
+            background-color: rgb(255, 172, 127);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .C102{
+            transform:rotateX(45deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* RotateY(deg) Property */
+        .C-103{
+            background-color: rgb(255, 172, 127);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .C103{
+            transform:rotateY(45deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* RotateZ(deg) Property */
+        .C-104{
+            background-color: rgb(255, 172, 127);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .C104{
+            transform:rotateZ(90deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Skew(X-axis, y-axis) Property */
+        .D-101{
+            background-color: rgb(103, 255, 38);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .D101{
+            transform:skew(90deg,30deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* SkewX(X-axis) Property */
+        .D-102{
+            background-color: rgb(103, 255, 38);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .D102{
+            transform:skewX(180deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* SkewY(Y-axis) Property */
+        .D-103{
+            background-color: rgb(103, 255, 38);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .D103{
+            transform:skewY(180deg);
+            background-color: rgb(71, 255, 224);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Matrix(Translate(),SCALE(),ROTATE(),SKEW()) Property */
+        .E-101{
+            background-color: rgb(209, 255, 4);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .E101{
+            transform:matrix(1,0,0,1,100,50);
+            background-color: rgb(98, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Multiple Transform Property */
+        .F-101{
+            background-color: rgb(209, 255, 4);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .F101{
+            transform:translate(50px,20px) rotate(45deg) scale(1,2);
+            background-color: rgb(98, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Transform-Origin Property */
+        .G-101{
+            background-color: rgb(4, 255, 125);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .G101{
+            transform:rotate(45deg);
+            transform-origin: center;
+            background-color: rgb(172, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+        /* Transform-Origin Property */
+        .G-102{
+            background-color: rgb(4, 255, 125);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .G102{
+            transform:rotate(45deg);
+            transform-origin: top left;
+            background-color: rgb(172, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+        /* Transform-Origin Property */
+        .G-103{
+            background-color: rgb(4, 255, 125);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .G103{
+            transform:rotate(45deg);
+            transform-origin: bottom left;
+            background-color: rgb(172, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* Transform-Origin with percentage Property */
+        .H-101{
+            background-color: rgb(4, 255, 125);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .H101{
+            transform:rotate(45deg);
+            transform-origin: 60% 150%;
+            background-color: rgb(172, 33, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* transform-style Property */
+        .I-101{
+            background-color: rgb(134, 4, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .I101{
+            transform:rotate(45deg);
+            transform-origin: 60% 150%;
+            transform-style:preserve-3d;
+            background-color: rgb(33, 190, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* transform-style Property */
+        .I-102{
+            background-color: rgb(134, 4, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .I102{
+            transform:rotate(45deg);
+            transform-origin: 60% 150%;
+            transform-style:flat;
+            background-color: rgb(33, 190, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* perspective Property */
+        .J-101{
+            background-color: rgb(134, 4, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+            perspective:500px;
+        }
+        .J101{
+            transform:rotate(45deg);
+            transform-origin: 60% 150%;
+            transform-style:preserve-3d;
+            background-color: rgb(33, 190, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* perspective Property */
+        .J-102{
+            background-color: rgb(134, 4, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .J102{
+            transform:perspective(500px) rotate(45deg);
+            transform-origin: 60% 150%;
+            transform-style:preserve-3d;
+            background-color: rgb(33, 190, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+
+        /* transform none Property */
+        .K-101{
+            background-color: rgb(134, 4, 255);
+            height:250px;
+            width:400px;
+            margin:10px 100px;
+        }
+        .K101{
+            transform:none;
+            background-color: rgb(33, 190, 252);
+            padding:10px 10px;
+            height:150px;
+            width:150px;
+        }
+    </style>
+</head>
+<body>
+    <h1>TRANSFORM PROPERTIES IN CSS</h1>
+    <ol>
+        <li>translate()</li>
+        <li>translateX()</li>
+        <li>translateY()</li>
+        <li>translateZ()</li>
+        <li>scale()</li>
+        <li>scaleX()</li>
+        <li>scaleY()</li>
+        <li>scale(x,y)</li>
+        <li>rotate()</li>
+        <li>rotateX()</li>
+        <li>rotateY()</li>
+        <li>rotateZ()</li>
+        <li>skew()</li>
+        <li>skewX()</li>
+        <li>skewY()</li>
+        <li>matrix()</li>
+    </ol>
+    <br><hr><br>
+    <h3 style="color:orange; font-weight:bold;">TRANSLATE PROPERTY</h3><br><hr><br>
+    <div class="A-101"> <!--parent box-->
+        <h4>Translate() : transform: translate(X-axis, Y-axis)</h4>
+        <!--child box-->
+        <p class="A101">translate() moves an element from its original position.(X-axis → left/right... Y-axis → up/down)</p>
+    </div><br><hr><br>
+    <div class="A-102">
+        <h4>TranslateX() : Move only horizontally</h4>
+        <p class="A102">Move only horizontally.+ -> Move Right, - -> Move Left.</p>
+    </div><br><hr><br>
+    <div class="A-103">
+        <h4>TranslateY() : Move only vertically</h4>
+        <p class="A103">Move only vertically.+ -> Move Down, - -> Move Up.</p>
+    </div><br><hr><br>
+    <div class="A-104">
+        <h4>TranslateZ() : Move along with Z-axis</h4>
+        <p class="A104">Move along with Z-axis</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">SCALE PROPERTY</h3><br><hr><br>
+    <div class="B-101"> <!--parent box-->
+        <h4>scale() — Make an element bigger or smaller</h4>
+        <!--child box-->
+        <p class="B101">2 means 200% of the original size.scale(1)   → original/scale(2)   → 2× bigger/scale(0.5) → half size</p>
+    </div><br><hr><br>
+    <div class="B-102"> 
+        <h4>scaleX() — Resize Horizontally</h4>
+        <p class="B102">scaleX()</p>
+    </div><br><hr><br>
+    <div class="B-103"> 
+        <h4>scaleY() — Resize Vertically</h4>
+        <p class="B103">scaleY()</p>
+    </div><br><hr><br>
+    <div class="B-104"> 
+        <h4>scale(x,y) — Control both</h4>
+        <p class="B104">scale(x,y)</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">ROTATE PROPERTY</h3><br><hr><br>
+    <div class="C-101"> <!--parent box-->
+        <h4>Rotate() - Rotate an element</h4>
+        <!--child box-->
+        <p class="C101">+ -> Clockwise Direction/ - -> Anticlockwise/counter-clockwise</p>
+    </div><br><hr><br>
+    <div class="C-102">
+        <h4>RotateX() - Rotate an element in X-axis</h4>
+        <p class="C102">+ -> Clockwise Direction/ - -> Anticlockwise/counter-clockwise</p>
+    </div><br><hr><br>
+    <div class="C-103">
+        <h4>RotateY() - Rotate an element in Y-axis</h4>
+        <p class="C103">+ -> Clockwise Direction/ - -> Anticlockwise/counter-clockwise</p>
+    </div><br><hr><br>
+    <div class="C-104">
+        <h4>RotateZ() - Rotate an element in Z-axis</h4>
+        <p class="C104">+ -> Clockwise Direction/ - -> Anticlockwise/counter-clockwise</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">SKEW PROPERTY</h3><br><hr><br>
+    <div class="D-101"> <!--parent box-->
+        <h4>Skew() - Makes an element look slanted/tilted.</h4>
+        <!--child box-->
+        <p class="C101">skew(x-axis,y-axis)  values are in terms of degree.</p>
+    </div><br><hr><br>
+    <div class="D-102"> 
+        <h4>SkewX() - Tilts horizontally.</h4>
+        <p class="C102">skewX(x-axis)  values are in terms of degree.</p>
+    </div><br><hr><br>
+    <div class="D-103"> 
+        <h4>SkewY() - Tilts vertically.</h4>
+        <p class="C103">skewY(y-axis)  values are in terms of degree.</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">MATRIX(TRANSLATE, SCALE,ROTATE,SKEW) PROPERTY Each parameters have 2 values x & y axis values</h3><br><hr><br>
+    <div class="E-101"> <!--parent box-->
+        <h4>Matrix() Combines several transform operations into a mathematical transformation matrix.</h4>
+        <!--child box-->
+        <p class="E101">MATRIX(TRANSLATE, SCALE,ROTATE,SKEW) each having x & y axis values.</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">MULTIPLE TRANSFORM PROPERTY</h3><br><hr><br>
+    <div class="F-101"> <!--parent box-->
+        <h4>We can apply multiple transformations together.</h4>
+        <!--child box-->
+        <p class="F101">Order should be matter - Translate()-Rotate()-Scale()</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">TRANSFORM-ORIGIN PROPERTY</h3><br><hr><br>
+    <div class="G-101"> <!--parent box-->
+        <h4>transform-origin:center</h4>
+        <!--child box-->
+        <p class="G101">By default transformation happens around the center of the element</p>
+    </div><br><hr><br>
+    <div class="G-102"> 
+        <h4>transform-origin:top left/top right</h4>
+        <p class="G102">By default transformation happens around the center of the element</p>
+    </div><br><hr><br>
+    <div class="G-103"> 
+        <h4>transform-origin:bottom left/bottom right</h4>
+        <p class="G103">By default transformation happens around the center of the element</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">TRANSFORM-ORIGIN WITH PERCENTAGE PROPERTY</h3><br><hr><br>
+    <div class="H-101"> <!--parent box-->
+        <h4>transform-origin:50% 50%</h4>
+        <!--child box-->
+        <p class="H101">top-left : 0% 0%/center : 50% 50% / bottom-right : 100% 100% (x & y)</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">TRANSFORM-STYLE PROPERTY</h3><br><hr><br>
+    <div class="I-101"> <!--parent box-->
+        <h4>transform-style:used for 3D transformation</h4>
+        <!--child box-->
+        <p class="I101">preserve-3d/flat = values</p>
+    </div><br><hr><br>
+    <div class="I-102"> 
+        <h4>transform-style:used for 3D transformation</h4>
+        <p class="I102">preserve-3d/flat = values</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">PERSPECTIVE PROPERTY</h3><br><hr><br>
+    <div class="J-101"> <!--parent box-->
+        <h4>perspective : 500px</h4>
+        <!--child box-->
+        <p class="J101">It controls the depth/perspective of 3d transformation(it should be in parent box)</p>
+    </div><br><hr><br>
+    <div class="J-102">
+    <h4>perspective() inside transform</h4>
+        <!--child box-->
+        <p class="J102">transform:perspective() rotate()</p>
+    </div><br><hr><br>
+
+    <h3 style="color:orange; font-weight:bold;">TRANSFORM NONE PROPERTY</h3><br><hr><br>
+    <div class="K-101"> <!--parent box-->
+        <h4>transform : none</h4>
+        <!--child box-->
+        <p class="K101">To remove the transformation</p>
+    </div><br><hr><br>
+</body>
+</html>
