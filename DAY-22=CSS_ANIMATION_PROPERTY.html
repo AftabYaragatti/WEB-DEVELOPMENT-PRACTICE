@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-22</title>
+    <style>
+        .A101{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBox1 3s;
+        }
+        /* keyframes : from(0%) to(100%) */
+        @keyframes moveBox1{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* Other Properties with Animations */
+        .A102{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBox2 10s;
+        }
+        /* @keyframes defines the different stages of your animation. */
+        @keyframes moveBox2{
+            from{
+                transform:translateY(300px);
+                opacity:1;
+                border:1px solid blue;
+                box-shadow:0px 0px 10px black;
+            }
+            to{
+                transform:translateX(300px);
+                opacity:0.6;
+                border:3px solid blue;
+                box-shadow:0px 0px 10px rgb(141, 4, 246);
+            }
+        }
+
+        /* stages of keyframes(0%,50%,100%) */
+        .A103{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBox3 2s;
+        }
+        @keyframes moveBox3{
+            0%{
+                transform:translateX(300px);
+            }
+            50%{
+                transform:rotate(45deg);
+            }
+            100%{
+                transform:translateY(400px);
+            }
+        }
+
+        /* stages of keyframes(0%,25%,50%,75%,100%) */
+        .A104{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBox4 12s;
+        }
+        @keyframes moveBox4{
+            0%{
+                transform:translateX(300px);
+            }
+            25%{
+                transform:rotate(45deg);
+                background-color: blueviolet;
+            }
+            50%{
+                transform:translateX(400px);
+            }
+            75%{
+                transform:rotate(125deg);
+                background-color: chartreuse;
+            }
+            100%{
+                transform:translateY(500px);
+            }
+        }
+
+        /* ANIMATION NAME */
+        .B101{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB101;
+        }
+        @keyframes moveBoxB101{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION DURATION */
+        .B102{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB102;
+            animation-duration:5s;
+        }
+        @keyframes moveBoxB102{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION TIMING FUNCTION */
+        .B103{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB103;
+            animation-duration:5s;
+            animation-timing-function:ease; /* common values : linear/ease/ease-in/ease-out/ease-in-out */
+        }
+        @keyframes moveBoxB103{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION DELAY */
+        .B104{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB104;
+            animation-duration: 5s;
+            animation-timing-function: ease;
+            animation-delay: 4s;
+        }
+        @keyframes moveBoxB104{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION ITERATION COUNT : Controls how many times the animation runs */
+        .B105{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB105;
+            animation-duration: 5s;
+            animation-timing-function: ease;
+            animation-delay: 4s;
+            animation-iteration-count: 3; /*Recommended : Infinite */
+        }
+        @keyframes moveBoxB105{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION DIRECTIONS(Reverse : 100%-0% ) */
+        .B106{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation-name:moveBoxB106;
+            animation-duration: 5s;
+            animation-timing-function: ease;
+            animation-delay: 4s;
+            animation-iteration-count: 1;
+            animation-direction:reverse; /* normal(0%->100%)  or reverse(100%->0%) or alternate(first 0%->100% then 100%->0%) */
+        }
+        @keyframes moveBoxB106{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION SHORTHAND PROPERTY */
+        .B107{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBoxB107 5s ease 4s infinite alternate;
+        }
+        @keyframes moveBoxB107{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION FILL MODE PROPERTY */
+        .C101{
+            height:100px;
+            width:100px;
+            background-color:orange;
+            text-align: center;
+            animation:moveBoxC101 5s ease 4s infinite alternate;
+            animation-fill-mode: both;
+        }
+        @keyframes moveBoxC101{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+
+        /* ANIMATION PLAY STATE PROPERTY */
+        .C102{
+            height:100px;
+            width:100px;
+            text-align: center;
+            background-color:orange;
+            animation:moveBoxC102 5s ease 4s infinite alternate;
+            animation-fill-mode: backward;
+        }
+        .C102:hover{
+            animation-play-state:paused;
+            background-color:green;
+        }
+        @keyframes moveBoxC102{
+            from{
+                transform:translateX(300px);
+            }
+            to{
+                transform:translateY(300px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1>ANIMATIONS PROPERTY IN CSS</h1>
+    <p>Animation Defines how the animation should run.</p>
+    <p>@keyframes defines the different stages of your animation.</p>
+    <h3>BASIC ANIMATION</h3>
+    <div class="A101">BOX-A101</div>
+    <h3>OTHER PROPERTY WITH ANIMATION</h3>
+    <div class="A102">BOX-A102</div>
+    <h3>KEYFRAMES STAGES IN ANIMATIONS (0% 50% 100%)</h3>
+    <div class="A103">BOX-A103</div>
+    <h3>KEYFRAMES STAGES IN ANIMATIONS (0% 25% 50% 75% 100%)</h3>
+    <div class="A104">BOX-A104</div>
+
+    <h2 style="text-align: center;">ANIMATION NAME</h2>
+    <p>Syntax : .box{animation-name:name;}<br> @keyframes name{from... to...}<br>Tells CSS which @keyframes animation to use.</p>
+    <div class="B101">BOX-B101</div>
+
+    <h2 style="text-align: center;">ANIMATION DURATION</h2>
+    <p>Controls how long one animation cycle takes.</p>
+    <div class="B102">BOX-B102</div>
+
+    <h2 style="text-align: center;">ANIMATION TIMING FUNCTION</h2>
+    <p>Controls the speed pattern.</p>
+    <p>Common values : linear/ease/ease-in/ease-out/ease-in-out</p>
+    <div class="B103">BOX-B103</div>
+
+    <h2 style="text-align: center;">ANIMATION DELAY</h2>
+    <p>Controls how long the browser waits before starting the animation.</p>
+    <p>Page loads->Wait 2 seconds->Animation starts<br></p>
+    <div class="B104">BOX-B104</div>
+
+    <h2 style="text-align: center;">ANIMATION ITERATION COUNT</h2>
+    <p>Controls how many times the animation runs.</p>
+    <p>Common Values : 1s/2s etc or infinite<br></p>
+    <div class="B105">BOX-B105</div>
+
+    <h2 style="text-align: center;">ANIMATION DIRECTION</h2>
+    <p>Controls which direction the animation plays.</p>
+    <p>Common Values : normal/reverse/alternate<br></p>
+    <div class="B106">BOX-B106</div>
+
+    <h2 style="text-align: center;">ANIMATION SHORTHAND PROPERTY</h2>
+    <p>animation : [animation-name] [animation-duration] [animation-timing-function] [animation-delay] [animation-iteration-count] [animation-direction]</p>
+    <p>Example : animation: moveBox 2s ease 2s infinite alternate;</p>
+    <div class="B107">BOX-B107</div>
+
+    <h2 style="text-align: center;">ANIMATION FILL MODE PROPERTY</h2>
+    <p>none : Default behavior. The element doesn't retain the animation's final styles.</p>
+    <p>forward : After the animation finishes, the element keeps the final keyframe.</p>
+    <p>backward : Applies the first keyframe during the delay period. This becomes more useful when you combine</p>
+    <p>Both : forward + backward</p>
+    <div class="C101">BOX-C101</div>
+
+    <h2 style="text-align: center;">ANIMATION PLAY STATE PROPERTY</h2>
+    <p>Controls whether an animation is: running/paused(paused use with hover property)</p>
+    <div class="C102">BOX-C102</div>
+
+    <h2 style="text-align: center;">ANIMATION SHORTHAND PROPERTY</h2>
+    <pre>
+    .box {
+    animation-name: moveBox;
+    animation-duration: 2s;
+    animation-timing-function: ease;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+    }
+    </pre>
+</body>
+</html>
