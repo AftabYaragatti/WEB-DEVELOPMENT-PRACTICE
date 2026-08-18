@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DAY-23</title>
+    <style>
+        .A101{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:pointer;
+        }
+        .A102{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:auto;
+        }
+        .A103{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:default;
+        }
+        .A104{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:text;
+        }
+        .A105{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:vertical-text;
+        }
+        .A106{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:none;
+        }
+        .A107{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:not-allowed;
+        }
+        .A108{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:no-drop;
+        }
+        .A109{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:grab;
+        }
+        .A110{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:grabbing;
+        }
+        img{
+            height:50px;
+            width:auto;
+        }
+        .A111{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:move;
+        }
+        .A112{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:crosshair;
+        }
+        .A113{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:wait;
+        }
+        .A114{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:progress;
+        }
+        .A115{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:help;
+        }
+        .A116{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:context-menu;
+        }
+        .A117{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:cell;
+        }
+        .A118{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:copy;
+        }
+        .A119{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:alias;
+        }
+        .A120{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:zoom-in;
+        }
+        .A121{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:zoom-out;
+        }
+        .A122{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:copy;
+        }
+        .A123{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:e-resize;
+        }
+        .A124{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:w-resize;
+        }
+        .A125{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:n-resize;
+        }
+        .A126{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:s-resize;
+        }
+        .A127{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:ne-resize;
+        }
+        .A128{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:nw-resize;
+        }
+        .A129{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:se-resize;
+        }
+        .A130{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:sw-resize;
+        }
+        .A131{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:ew-resize;
+        }
+        .A132{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:ns-resize;
+        }
+        .A133{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:nesw-resize;
+        }
+        .A134{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:col-resize;
+        }
+        .A135{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:row-resize;
+        }
+        .A136{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:all-scroll;
+        }
+        .A137{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:vertical-text;
+        }
+        .A138{
+            height:200px;
+            width:200px;
+            background-color: bisque;
+            cursor:url();
+        }
+
+        /* List Property */
+        .B101{
+            list-style-type:decimal;
+            background-color: aquamarine;
+        }
+        .B102{
+            list-style-type:disc;
+            background-color: aquamarine;
+            list-style-position:inside;
+        }
+        .B103{
+            list-style-type:disc;
+            background-color: aquamarine;
+            list-style-position:outside;
+            list-style-image:url("sample3.jpeg")
+        }
+        .B104{
+            background-color: aquamarine;
+            list-style:disc outside none;
+        }
+
+        /* table properties */
+        table{
+            border : 2px solid black;
+        }
+        th,td{
+            border:1px solid black;
+        }
+        .C101{
+            border-collapse:separate;
+            border-spacing:5px 5px;
+            /*  5px → horizontal spacing
+                5px → vertical spacing */
+            empty-cells:show;
+            table-layout:fixed;
+            width:600px;
+            height:300px;
+        }
+        .CC1{
+            caption-side:top;
+        }
+
+        .C102{
+            border-collapse:collapse;
+            border-spacing:5px 5px;
+            /*  5px → horizontal spacing
+                5px → vertical spacing */
+            empty-cells:hide;
+            table-layout:auto;
+            width:100%;
+            height:50%;
+        }
+        .CC2{
+            caption-side:bottom;
+        }
+        tr{
+            transition: 0.3s;
+        }
+        tr:nth-child(even){
+            background-color: #f2f2f2;
+        }
+        tr:nth-child(odd) {
+            background-color: white;
+        }
+        tr:hover{
+            transform:scale(1.01);
+            background-color: rgb(225, 77, 77);
+        }
+
+        /* Marque Scrolling property */
+        marquee{
+            color:blue;
+            background-color: aquamarine;
+            padding:10px 10px;
+        }
+
+        /* New Scrolling  */
+        .mq {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            background-color: rgb(99, 39, 211);
+            padding:10px 10px;
+            color:blue;
+        }
+        .mq span {
+            display: inline-block;
+            animation: scroll 10s linear infinite;
+        }
+        @keyframes scroll {
+            from {
+                transform: translateX(100%);
+            }
+
+            to {
+                transform: translateX(-100%);
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;color:blue">CURSOR PROPERTIES</h1>
+    <div class="A101">BOX-A101 :(pointer : Shows a hand pointer.Ex : buttons) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A102">BOX-A102 :(auto : Browser decides the cursor automatically based on the element) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A103">BOX-A103 :(default : Shows the normal default arrow cursor.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A104">BOX-A104 :(text : Shows the text-selection cursor.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A105">BOX-A105 :(vertical-text : Shows the text-selection cursor..) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A106">BOX-A106 :(none : hides the cursor..) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A107">BOX-A107 :(not-allowed : Shows that an action is not allowed. Ex : Button) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A108">BOX-A108 :(no-drop : Indicates that dropping something is not allowed.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A109">BOX-A109 :(grab : Shows that an element can be grabbed.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A110">BOX-A110 :(grabbing : Shows that the element is currently being grabbed.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A111">BOX-A111 :(move : Indicates that something can be moved.) move mouse here to see the cursor property
+    <img src="sample3.jpeg">
+    </div><br><hr><br>
+
+    <div class="A112">BOX-A112 :(crosshair : shows crosshair. Ex : useful for drawing,image editing etc) move mouse here to see the cursor property
+    <img src="sample3.jpeg">
+    </div><br><hr><br>
+
+    <div class="A113">BOX-A113 :(wait : Indicates that the computer is busy.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A114">BOX-A114 :(progress : Indicates that an operation is in progress but the user may still interact with the page.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A115">BOX-A115 :(help : Shows a cursor indicating that help/information is available.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A116">BOX-A116 :(context-menu : Indicates that a context menu is available.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A117">BOX-A117 :(cell : Shows a cell-selection cursor.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A118">BOX-A118 :(copy : Indicates that an item can be copied.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A119">BOX-A119 :(alias : Indicates that an alias or shortcut will be created.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A120">BOX-A120 :(zoom-in : Shows a magnifying glass with a plus/zoom-in indication. Ex ; useful for images) move mouse here to see the cursor property
+    <img src="sample3.jpeg">
+    </div><br><hr><br>
+
+    <div class="A121">BOX-A121 :(zoom-out : Shows a magnifying glass with a minus/zoom-out indication. Ex ; useful for images) move mouse here to see the cursor property
+    <img src="sample3.jpeg">
+    </div><br><hr><br>
+
+    <div class="A122">BOX-A122 :(copy : Indicates a copy operation.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A123">BOX-A123 :(e-resize : Indicates horizontal resizing toward the east/right.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A124">BOX-A124 :(w-resize : Indicates resizing toward the west/left.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A125">BOX-A125 :(n-resize : Indicates resizing toward the north/top.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A126">BOX-A126 :(s-resize : Indicates resizing toward the south/bottom.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A127">BOX-A127 :(ne-resize : Northeast diagonal resize.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A128">BOX-A128 :(nw-resize : Northwest diagonal resize.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A129">BOX-A129 :(se-resize : Southeast diagonal resize.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A130">BOX-A130 :(sw-resize : Southwest diagonal resize.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A131">BOX-A131 :(ew-resize : Indicates resizing horizontally.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A132">BOX-A132 :(ns-resize : Indicates resizing vertically.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A133">BOX-A133 :(nesw-resize : Diagonal resize from northeast to southwest. or nwse) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A134">BOX-A134 :(col-resize : Indicates that a column can be resized. Ex : tables) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A135">BOX-A135 :(row-resize : Indicates that a row can be resized. Ex :tables) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A136">BOX-A136 :(all-scroll : Indicates that an element can be moved in all directions.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A137">BOX-A137 :(vertical-text : Used when text can be selected vertically.) move mouse here to see the cursor property</div><br><hr><br>
+
+    <div class="A138">BOX-A138 :(url() : You can create a custom cursor using an image.) move mouse here to see the cursor property</div><br><hr><br>
+
+
+    <h1 style="text-align: center;color:blue">LIST PROPERTIES</h1>
+    <h4>List Style Type</h4>
+    <p>Common Values for Order List: 
+        <pre>
+        decimal
+        decimal-leading-zero
+        lower-alpha
+        upper-alpha
+        lower-latin
+        upper-latin
+        lower-roman
+        upper-roman
+        lower-greek
+        none
+        </pre></p>
+        <br>
+        <p>Common Values for Un-order List: 
+        <pre>
+        disc
+        circle
+        square
+        none
+        </pre></p>
+    <ol class="B101">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Strawberry</li>
+    </ol>
+
+    <h4>List Style Position</h4>
+    <p>Common values : Inside and Outside</p>
+    <ol class="B102">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Strawberry</li>
+    </ol>
+
+    <h4>List Style Image</h4>
+    <p>Common values : url(path)</p>
+    <ol class="B103">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Strawberry</li>
+    </ol>
+
+    <h4>List Style Shorthand property : [list-style-type] [list-style-position] [list-style-image]</h4>
+    <ol class="B104">
+        <li>Apple</li>
+        <li>Banana</li>
+        <li>Cherry</li>
+        <li>Strawberry</li>
+    </ol>
+
+
+    <h1 style="text-align: center;color:blue">TABLE PROPERTIES</h1>
+
+    <table class="C101">
+        <caption class="CC1">Student Information</caption>
+        <tr>
+            <th>Student Name</th>
+            <th>USN</th>
+            <th>PERCENTAGE</th>
+        </tr>
+        <tr>
+            <td>Aftab</td>
+            <td>2HN22CS005</td>
+            <td>89%</td>
+        </tr>
+        <tr>
+            <td>Shadaf</td>
+            <td></td>
+            <td>83%</td>
+        </tr>
+    </table>
+    <br><hr><br>
+    <table class="C102">
+        <caption class="CC2">Student Information</caption>
+        <tr>
+            <th>Student Name</th>
+            <th>USN</th>
+            <th>PERCENTAGE</th>
+        </tr>
+        <tr>
+            <td>Aftab</td>
+            <td>2HN22CS005</td>
+            <td>89%</td>
+        </tr>
+        <tr>
+            <td>Shadaf</td>
+            <td></td>
+            <td>83%</td>
+        </tr>
+    </table>
+
+    <h1 style="text-align: center;color:blue">MARQUEE SCROLLING PROPERTIES</h1>
+
+    <h3>Old Scrolling Text</h3>
+    <marquee direction="left" scrollamount="5">Welcome to my website</marquee>
+    <!--If scroll amount is less than scrolling takes slow scrolling, more means fast scrolling-->
+    <br><hr><br>
+
+    <h3>MARQUEE PROPERTIES : BEHAVIOR = (Scroll/slide/alternate)</h3>
+    <marquee behavior="scroll">Welcome to my website = Scroll</marquee>
+    <br><hr><br>
+    <marquee behavior="slide">Welcome to my website = Slide</marquee>
+    <br><hr><br>
+    <marquee behavior="alternate">Welcome to my website = Alternate</marquee>
+
+    <h3>MARQUEE PROPERTIES : DIRECTION = (left/right/up/down)</h3>
+    <marquee behavior="scroll" direction="left">Welcome to my website = LEFT</marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="right">Welcome to my website = RIGHT</marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="up">Welcome to my website = UP</marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="down">Welcome to my website = DOWN</marquee>
+    <br><hr><br>
+
+    <h3>MARQUEE PROPERTIES : SCROLL AMOUNT = (fast=10(increase speed))/ slow=1(decrees speed))</h3>
+    <p>smaller value → slower/larger value → faster</p>
+    <marquee behavior="scroll" direction="left" scrollamount="2">Welcome to my website = LEFT</marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="left" scrollamount="10">Welcome to my website = LEFT</marquee>
+    <br><hr><br>
+
+    <h3>MARQUEE PROPERTIES : SCROLL DELAY</h3>
+    <p>smaller delay → faster/larger delay → slower</p>
+    <marquee behavior="scroll" direction="left" scrollamount="2" scrolldelay="100">Welcome to my website </marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="left" scrollamount="2" scrolldelay="10">Welcome to my website </marquee>
+    <br><hr><br>
+
+    <h3>MARQUEE PROPERTIES : LOOP</h3>
+    <p>smaller delay → faster/larger delay → slower</p>
+    <marquee behavior="scroll" direction="left" scrollamount="2" loop="3">Welcome to my website </marquee>
+    <br><hr><br>
+    <marquee behavior="scroll" direction="left" scrollamount="2" loop="-1">Welcome to my website </marquee>
+    <br><hr><br>
+
+    <h3>MARQUEE PROPERTIES : HEIGHT/WIDTH/VSPACE/HSPACE/BGCOLOR/ALIGN</h3>
+    <p>smaller delay → faster/larger delay → slower</p>
+    <marquee behavior="scroll" direction="left" scrollamount="2" loop="3" height="100" width="500" hspace="30" vspace="30" bgcolor="yellow" align="top">Welcome to my website </marquee>
+
+    <h3>New Scrolling Text</h3>
+    <div class="mq">
+    <span>Welcome to my website</span>
+    <br><hr><br>
+</div>
+</body>
+</html>
